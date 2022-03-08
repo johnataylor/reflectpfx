@@ -1,0 +1,16 @@
+TODO:
+
+<
+>
+<=
+>=
+==
+!=
+!
+%
+&
+string literals
+string interpolation
+boolean
+dot operator
+
