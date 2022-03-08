@@ -39,8 +39,14 @@ function traversePrimary(node) {
         case 'function':
             append(node.name);
             append('(');
-            traverse(node.args);
+            if (node.args !== undefined) {
+                traverse(node.args);
+            }
             append(')');
+            break;
+        case 'variable':
+            append(node.name);
+            break;
     }
 }
 

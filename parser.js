@@ -67,15 +67,26 @@ function prim(get) {
         case 'NAME': {
             var name = stringValue;
             getToken();
-            if (currTok !== 'LP') {
-                throw new Error('( expected');
+            // function
+            if (currTok === 'LP') {
+                getToken();
+                if (currTok === 'RP') {
+                    getToken();
+                    return { type: 'primary', match: 'function', name: name };
+                }
+                else {
+                    var arguments = args(false);
+                    if (currTok !== 'RP') {
+                        throw new Error(') expected');
+                    }
+                    getToken();
+                    return { type: 'primary', match: 'function', name: name, args: arguments };
+                }
             }
-            var arguments = args(true);
-            if (currTok !== 'RP') {
-                throw new Error(') expected');
+            // variable
+            else {
+                return { type: 'primary', match: 'variable', name: name };
             }
-            getToken();
-            return { type: 'primary', match: 'function', name: name, args: arguments };
         }
         case 'MINUS': {
             var p = prim(true);

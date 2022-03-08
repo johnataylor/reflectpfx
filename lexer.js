@@ -15,7 +15,7 @@ var tokenTypes = {
     LP: /\(/,
     RP: /\)/,
     COMMA: /\,/,
-    NUMBER: /[0-9]+/,
+    NUMBER: /\d+/,
     NAME: /[a-z]+/
 };
 
@@ -26,6 +26,10 @@ function nextToken(s) {
         if (result !== null) {
             if (result.index <= match.index) {
                 match = { type: tokenType, value: result[0], index: result.index };
+            }
+            // alternative have all regex include ^ assertion
+            if (result.index === 0) {
+                break;
             }
         }
     }
