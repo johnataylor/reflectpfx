@@ -36,6 +36,22 @@ function traversePrimary(node) {
             traverse(node.expression);
             append(')');
             break;
+        case 'function':
+            append(node.name);
+            append('(');
+            traverse(node.args);
+            append(')');
+    }
+}
+
+function traverseArgs(node) {
+    if (node.expression !== undefined) {
+        traverse(node.expression);
+    }
+    else {
+        traverse(node.left);
+        append(',');
+        traverse(node.right);
     }
 }
 
@@ -49,6 +65,9 @@ function traverse(node) {
             break;
         case 'primary':
             traversePrimary(node);
+            break;
+        case 'args':
+            traverseArgs(node);
             break;
     }
 }

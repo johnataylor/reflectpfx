@@ -14,7 +14,9 @@ var tokenTypes = {
     DIV: /\//,
     LP: /\(/,
     RP: /\)/,
-    NUMBER: /[0-9]+/
+    COMMA: /\,/,
+    NUMBER: /[0-9]+/,
+    NAME: /[a-z]+/
 };
 
 function nextToken(s) {

@@ -3,6 +3,20 @@
 
 var currTok = '';
 var numberValue = 0;
+var stringValue = '';
+
+function args(get) {
+    var left = { type: 'args', expression: expr(get) };
+    for (;;) {
+        switch (currTok) {
+            case 'COMMA':
+                left = { type: 'args', left: left, right: expr(true) };
+                break;
+            default:
+                return left;
+        }
+    }
+}
 
 function expr(get) {
     var left = { type: 'expression', term: term(get) };
@@ -51,7 +65,17 @@ function prim(get) {
             return { type: 'primary', match: 'number', value: v };
         }
         case 'NAME': {
-            throw new Error('not implemented');
+            var name = stringValue;
+            getToken();
+            if (currTok !== 'LP') {
+                throw new Error('( expected');
+            }
+            var arguments = args(true);
+            if (currTok !== 'RP') {
+                throw new Error(') expected');
+            }
+            getToken();
+            return { type: 'primary', match: 'function', name: name, args: arguments };
         }
         case 'MINUS': {
             var p = prim(true);
@@ -86,6 +110,9 @@ function getToken() {
     currTok = token.type;
     if (token.type === 'NUMBER') {
         numberValue = parseInt(token.value);
+    }
+    else if (token.type === 'NAME') {
+        stringValue = token.value;
     }
 }
 
