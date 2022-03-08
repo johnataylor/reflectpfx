@@ -5,14 +5,14 @@ var currTok = '';
 var numberValue = 0;
 
 function expr(get) {
-    var left = { type: 'expr', term: term(get) };
+    var left = { type: 'expression', term: term(get) };
     for (;;) {
         switch (currTok) {
             case 'PLUS':
-                left = { type: 'expr', operator: '+', left: left, right: term(true) };
+                left = { type: 'expression', operator: '+', left: left, right: term(true) };
                 break;
             case 'MINUS':
-                left = { type: 'expr', operator: '-', left: left, right: term(true) };
+                left = { type: 'expression', operator: '-', left: left, right: term(true) };
                 break;
             default:
                 return left;
@@ -22,7 +22,6 @@ function expr(get) {
 
 function term(get) {
     var left = { type: 'term', primary: prim(get) };
-
     for (;;) {
         switch (currTok) {
             case 'MUL':
@@ -46,7 +45,7 @@ function prim(get) {
         getToken();
     }
     switch (currTok) {
-        case 'NUM': {
+        case 'NUMBER': {
             var v = numberValue;
             getToken();
             return { type: 'primary', match: 'number', value: v };
@@ -85,7 +84,7 @@ function getToken() {
     }
     // the lexer returns text spans, strings from the original 
     currTok = token.type;
-    if (token.type === 'NUM') {
+    if (token.type === 'NUMBER') {
         numberValue = parseInt(token.value);
     }
 }
@@ -105,6 +104,4 @@ function eval(t) {
 module.exports = {
     eval: eval
 };
-
-
 

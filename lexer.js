@@ -4,7 +4,7 @@
 // instead it is just returning an array of tokens containing the matching text
 
 // http://dinosaur.compilertools.net/lex/index.html
-// note the co-author of lex was Eric Schmidt (when he was an intern at Bell Labs before he ran Google)
+// fun fact: the co-author of lex was Eric Schmidt (when he was an intern at Bell Labs before he ran Google)
 
 var tokenTypes = {
     WS: /\s+/,
@@ -14,7 +14,7 @@ var tokenTypes = {
     DIV: /\//,
     LP: /\(/,
     RP: /\)/,
-    NUM: /[0-9]+/
+    NUMBER: /[0-9]+/
 };
 
 function nextToken(s) {
