@@ -14,9 +14,29 @@ var tokenTypes = {
     DIV: /\//,
     LP: /\(/,
     RP: /\)/,
+    CLP: /\{/,
+    CRP: /\}/,
+    SLP: /\[/,
+    SRP: /\]/,
+    MOD: /\%/,
     COMMA: /\,/,
     NUMBER: /\d+/,
-    NAME: /[a-z]+/
+    EQUAL: /\=/,
+    NOT_EQUAL: /\<\>/,
+    NOT: /\!/,
+    LESS_THAN: /\</,
+    LESS_THAN_EQUAL: /\<\=/,
+    GREATER_THAN: /\>/,
+    GREATER_THAN_EQUAL: /\>\=/,
+    CONCAT: /\&/,
+    DOT: /\./,
+    LOGICAL_AND: /\&\&/,
+    LOGICAL_OR: /\|\|/,
+    AND: /[aA][nN][dD]/,
+    OR: /[oO][rR]/,
+    LOGICAL_LITERAL: /[tT][rR][uU][eE]|[fF][aA][lL][sS][eE]/,
+    //TEXT_LITERAL: /"(?!")[^"]*"(?!")/,
+    NAME: /[a-zA-Z][a-zA-Z0-9]*/
 };
 
 function nextToken(s) {
