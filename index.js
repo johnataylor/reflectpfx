@@ -12,7 +12,9 @@ const utils = require('./utils.js');
 //var tokens = lexer.tokenize('f(1, g())');
 
 //var tokens = lexer.tokenize('f(a, b, g(c + 2, 4))');
-var tokens = lexer.tokenize('f(a, b, g(p(q(4)), c * (2 + x), 4 * x, foo(2, 3, y)))');
+//var tokens = lexer.tokenize('f(a, b, g(p(q(4)), c * (2 + x), 4 * x, foo(2, 3, y)))');
+//var tokens = lexer.tokenize('x * 2 < (42 - y)');
+var tokens = lexer.tokenize('len(x) > 20');
 
 //lexer.log(tokens);
 

@@ -4,6 +4,17 @@ function append(ch) {
     buf += ch;
 }
 
+function traverseBexpression(node) {
+    if (node.expression !== undefined) {
+        traverse(node.expression);
+    }
+    else {
+        traverse(node.left);
+        append(node.operator);
+        traverse(node.right);
+    }
+}
+
 function traverseExpression(node) {
     if (node.term !== undefined) {
         traverse(node.term);
@@ -63,6 +74,9 @@ function traverseArgs(node) {
 
 function traverse(node) {
     switch (node.type) {
+        case 'bexpression':
+            traverseBexpression(node);
+            break;
         case 'expression':
             traverseExpression(node);
             break;

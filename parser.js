@@ -16,6 +16,34 @@ function args(get) {
     }
 }
 
+function bexpr(get) {
+    var left = { type: 'bexpression', expression: expr(get) };
+    for (;;) {
+        switch (currentToken.type) {
+            case 'LESS_THAN':
+                left = { type: 'bexpression', operator: '<', left: left, right: expr(true) };
+                break;
+            case 'GREATER_THAN':
+                left = { type: 'bexpression', operator: '>', left: left, right: expr(true) };
+                break;
+            case 'EQUAL':
+                left = { type: 'bexpression', operator: '=', left: left, right: expr(true) };
+                break;
+            case 'NOT_EQUAL':
+                left = { type: 'bexpression', operator: '<>', left: left, right: expr(true) };
+                break;
+            case 'LESS_THAN_EQUAL':
+                left = { type: 'bexpression', operator: '>=', left: left, right: expr(true) };
+                break;
+            case 'GREATER_THAN_EQUAL':
+                left = { type: 'bexpression', operator: '<=', left: left, right: expr(true) };
+                break;
+            default:
+                return left;
+        }
+    }
+}
+
 function expr(get) {
     var left = { type: 'expression', term: term(get) };
     for (;;) {
@@ -91,7 +119,7 @@ function prim(get) {
             return { type: 'primary', match: 'unary-minus', primary: p };
         }
         case 'LP':
-            var e = expr(true);
+            var e = bexpr(true);
             if (currentToken.type !== 'RP') {
                 throw new Error(') expected');
             }
@@ -125,7 +153,7 @@ function eval(t) {
         if (currentToken && currentToken.type === 'END') {
             break;
         }
-        var v = expr(false);
+        var v = bexpr(false);
         return v;
     }
 }
