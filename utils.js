@@ -29,7 +29,7 @@ function traverseTerm(node) {
 function traversePrimary(node) {
     switch (node.match) {
         case 'number':
-            append(node.value.toString());
+            append(node.value);
             break;
         case 'parenthesis':
             append('(');
@@ -84,4 +84,6 @@ function print(tree) {
     return buf;
 }
 
-module.exports = { print: print };
+module.exports = {
+    print: print
+};

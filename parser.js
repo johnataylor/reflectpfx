@@ -1,14 +1,12 @@
 // This top down parser is almost verbatim from Bjarne Stroupstrup's example in
 // "The C++ Programming Language Third Edition" section 6.1.1 page 108
 
-var currTok = '';
-var numberValue = 0;
-var stringValue = '';
+var currentToken;
 
 function args(get) {
     var left = { type: 'args', expression: expr(get) };
     for (;;) {
-        switch (currTok) {
+        switch (currentToken.type) {
             case 'COMMA':
                 left = { type: 'args', left: left, right: expr(true) };
                 break;
@@ -21,7 +19,7 @@ function args(get) {
 function expr(get) {
     var left = { type: 'expression', term: term(get) };
     for (;;) {
-        switch (currTok) {
+        switch (currentToken.type) {
             case 'PLUS':
                 left = { type: 'expression', operator: '+', left: left, right: term(true) };
                 break;
@@ -37,7 +35,7 @@ function expr(get) {
 function term(get) {
     var left = { type: 'term', primary: prim(get) };
     for (;;) {
-        switch (currTok) {
+        switch (currentToken.type) {
             case 'MUL':
                 left = { type: 'term', operator: '*', left: left, right: prim(true) };
                 break;
@@ -58,25 +56,25 @@ function prim(get) {
     if (get) {
         getToken();
     }
-    switch (currTok) {
+    switch (currentToken.type) {
         case 'NUMBER': {
-            var v = numberValue;
+            var v = currentToken.value;
             getToken();
             return { type: 'primary', match: 'number', value: v };
         }
         case 'NAME': {
-            var name = stringValue;
+            var name = currentToken.value;
             getToken();
             // function
-            if (currTok === 'LP') {
+            if (currentToken.type === 'LP') {
                 getToken();
-                if (currTok === 'RP') {
+                if (currentToken.type === 'RP') {
                     getToken();
                     return { type: 'primary', match: 'function', name: name };
                 }
                 else {
                     var arguments = args(false);
-                    if (currTok !== 'RP') {
+                    if (currentToken.type !== 'RP') {
                         throw new Error(') expected');
                     }
                     getToken();
@@ -94,7 +92,7 @@ function prim(get) {
         }
         case 'LP':
             var e = expr(true);
-            if (currTok !== 'RP') {
+            if (currentToken.type !== 'RP') {
                 throw new Error(') expected');
             }
             getToken();
@@ -109,7 +107,7 @@ function prim(get) {
 var tokens;
 
 function getToken() {
-    if (currTok === 'END') {
+    if (currentToken && currentToken.type === 'END') {
         return;
     }
     // skip whitespace
@@ -117,21 +115,14 @@ function getToken() {
     if (token.type === 'WS') {
         token = tokens.shift();
     }
-    // the lexer returns text spans, strings from the original 
-    currTok = token.type;
-    if (token.type === 'NUMBER') {
-        numberValue = parseInt(token.value);
-    }
-    else if (token.type === 'NAME') {
-        stringValue = token.value;
-    }
+    currentToken = token;
 }
 
 function eval(t) {
     tokens = t;
     for (;;) {
         getToken();
-        if (currTok === 'END') {
+        if (currentToken && currentToken.type === 'END') {
             break;
         }
         var v = expr(false);
