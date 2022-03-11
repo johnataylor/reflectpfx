@@ -132,22 +132,26 @@ function prim(get) {
 
 // slightly odd getToken arrangement to plug into the Bjarne Stroustrup code above
 
+// TODO: make parse tree point to the underlying token 
+
 var tokens;
+var index;
 
 function getToken() {
     if (currentToken && currentToken.type === 'END') {
         return;
     }
     // skip whitespace
-    var token = tokens.shift();
+    var token = tokens[index++];
     if (token.type === 'WS') {
-        token = tokens.shift();
+        token = tokens[index++];
     }
     currentToken = token;
 }
 
 function eval(t) {
     tokens = t;
+    index = 0;
     for (;;) {
         getToken();
         if (currentToken && currentToken.type === 'END') {
