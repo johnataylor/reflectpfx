@@ -54,6 +54,9 @@ function expr(get) {
             case 'MINUS':
                 left = { type: 'expression', operator: '-', left: left, right: term(true) };
                 break;
+            case 'CONCAT':
+                left = { type: 'expression', operator: '&', left: left, right: term(true) };
+                break;
             default:
                 return left;
         }
@@ -89,6 +92,16 @@ function prim(get) {
             var v = currentToken.value;
             getToken();
             return { type: 'primary', match: 'number', value: v };
+        }
+        case 'TEXT_LITERAL': {
+            var v = currentToken.value;
+            getToken();
+            return { type: 'primary', match: 'text_literal', value: v };
+        }
+        case 'LOGICAL_LITERAL': {
+            var v = currentToken.value;
+            getToken();
+            return { type: 'primary', match: 'logical_literal', value: v };
         }
         case 'NAME': {
             var name = currentToken.value;

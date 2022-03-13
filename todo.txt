@@ -1,15 +1,18 @@
-<
->
-<=
->=
-==
-!=
+lexer and parser
+----------------
+
 !
 &&
 ||
 %
-&
-string literals
-string interpolation
-boolean
 dot operator
+string interpolation
+
+
+engineering
+-----------
+
+- mocha tests
+- switch case formating
+- pointers to underlying tokens (and therefore index)
+

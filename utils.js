@@ -42,6 +42,12 @@ function traversePrimary(node) {
         case 'number':
             append(node.value);
             break;
+        case 'text_literal':
+            append(node.value);
+            break;
+        case 'logical_literal':
+            append(node.value);
+            break;
         case 'parenthesis':
             append('(');
             traverse(node.expression);

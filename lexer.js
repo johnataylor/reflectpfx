@@ -35,7 +35,7 @@ var tokenTypes = {
     AND: /[aA][nN][dD]/,
     OR: /[oO][rR]/,
     LOGICAL_LITERAL: /[tT][rR][uU][eE]|[fF][aA][lL][sS][eE]/,
-    //TEXT_LITERAL: /"(?!")[^"]*"(?!")/,
+    TEXT_LITERAL: /"{1}([^"]|"{2})*"{1}/,
     NAME: /[a-zA-Z][a-zA-Z0-9]*/
 };
 
@@ -47,7 +47,6 @@ function nextToken(s) {
             if (result.index <= match.index) {
                 match = { type: tokenType, value: result[0], index: result.index };
             }
-            // alternative have all regex include ^ assertion
             if (result.index === 0) {
                 break;
             }
