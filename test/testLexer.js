@@ -1,7 +1,24 @@
-var assert = require('assert');
+const assert = require('assert');
 const lexer = require('../lib/lexer.js');
 
 describe('whitespace', function() {
+    it('single space should be tokenized', function(){
+        var tokens = lexer.tokenize(' ');
+        assert.equal('WS', tokens[0].type);
+    });
+    it('multiple space should be tokenized', function(){
+        var tokens = lexer.tokenize('    ');
+        assert.equal('WS', tokens[0].type);
+    });
+    it('cr and tab space should be tokenized', function(){
+        var tokens = lexer.tokenize('\n\n\t \t');
+        assert.equal('WS', tokens[0].type);
+    });
+    it('mixed tokens and whitespace space should be tokenized', function(){
+        var tokens = lexer.tokenize(' 2 +\n\n 2+3 + 4\t-34 + 1');
+        tokens = tokens.filter((token) => token.type != 'WS'); 
+        assert.equal(12, tokens.length);
+    });
 });
 
 describe('individual tokens', function() {
