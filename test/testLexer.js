@@ -205,5 +205,8 @@ describe('literals', function() {
     });
 });
 
+describe('comparison operators', function() {
+});
+
 describe('cross token interference', function() {
 });

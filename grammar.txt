@@ -1,0 +1,40 @@
+
+bexpression:
+  expression < bexpression
+  expression > bexpression
+  expression = bexpression
+  expression <> bexpression
+  expression <= bexpression
+  expression >= bexpression
+
+// probably a bug - in that yuou should be able to have bexpressions as arguments
+
+args:
+  expression , args
+  expression
+
+expression:
+  term + expression
+  term - expression
+  term & expression
+  term
+
+term:
+  primary / term
+  primary * term
+  primary
+
+// probably a bug - should there be a function production?
+
+primary:
+  NUMBER
+  TEXT_LITERAL
+  LOGICAL_LITERAL
+  NAME
+  NAME ( args )
+  NAME ( )
+  - primary
+  ( expression )
+
+// probably a bug - is dot notation actually the root?
+
