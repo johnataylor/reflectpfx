@@ -8,15 +8,18 @@ function roundtrip(original) {
 
     // first trip through lexer and parser and pretty print
     var t1 = lexer.tokenize(original);
+    var c1 = t1.filter(token => token.type !== 'WS').length;
     var v1 = parser.eval(t1);
     var b1 = utils.print(v1);
-    
+
     // second trip through lexer and parser and pretty print
     var t2 = lexer.tokenize(b1);
+    var c2 = t2.filter(token => token.type !== 'WS').length;
     var v2 = parser.eval(t2);
     var b2 = utils.print(v2);
 
     // compare the results
+    assert.equal(c1, c2);
     assert.equal(b1, b2);
 }
 

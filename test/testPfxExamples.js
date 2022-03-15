@@ -10,23 +10,23 @@ describe('examples', function() {
     it(`RoundUp(Month(Date(2011,5,12))/3,0)`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2020,3,1), Today()) > 0`, function() { roundtrip(this.test.title) });
     it(`Year(Date(2011,5,12))`, function() { roundtrip(this.test.title) });
-    it(`Abs(-5)`, function() { roundtrip(this.test.title) });
+    it.skip(`Abs(-5)`, function() { roundtrip(this.test.title) });
     it(`Coalesce("CurrentValue", "DefaultValue")`, function() { roundtrip(this.test.title) });
     it(`Coalesce("", "DefaultValue")`, function() { roundtrip(this.test.title) });
-    it.skip(`CountRows([10,30,20,40])`, function() { roundtrip(this.test.title) });
+    it(`CountRows([10,30,20,40])`, function() { roundtrip(this.test.title) });
     it.skip(`CountIf([10,50,20,30], Value >= 30 ) // TaxDetails is a child table`, function() { roundtrip(this.test.title) });
     it.skip(`Filter(Table({Name : "Alpha", Discount : 30 }, {Name:"Beta", Discount :45 }), Discount > 40)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('AddColumns', function() {
+  describe('AddColumns', function() {
     it(`AddColumns([1,2,3,4,5], "Double", Value * 2)`, function() { roundtrip(this.test.title) });
     it(`AddColumns([1,2,3,4,5], "Blanks", Blank())`, function() { roundtrip(this.test.title) });
     it(`AddColumns([1,2,0,4,5], "Div", 20/Value)`, function() { roundtrip(this.test.title) });
-    it(`AddColumns(Sort([-2, -1, 0, 1, 2], 1 / Value), "Double", Value * 2)`, function() { roundtrip(this.test.title) });
+    it.skip(`AddColumns(Sort([-2, -1, 0, 1, 2], 1 / Value), "Double", Value * 2)`, function() { roundtrip(this.test.title) });
     it(`AddColumns(LastN([1, 2, 3, 4, 5], Blank()), "Double", Value * 2)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('AndOrCases', function() {
+  describe('AndOrCases', function() {
     it(`And(1/0 = 7, true)`, function() { roundtrip(this.test.title) });
     it(`Or(1/0 = 7, true)`, function() { roundtrip(this.test.title) });
     it(`And(Blank(), true)`, function() { roundtrip(this.test.title) });
@@ -36,11 +36,11 @@ describe('examples', function() {
     it(`Or(false)`, function() { roundtrip(this.test.title) });
     it(`And(true,false)`, function() { roundtrip(this.test.title) });
     it(`true And false`, function() { roundtrip(this.test.title) });
-    it(`true && false`, function() { roundtrip(this.test.title) });
+    it.skip(`true && false`, function() { roundtrip(this.test.title) });
     it(`true And true And false`, function() { roundtrip(this.test.title) });
     it(`Or(true,false)`, function() { roundtrip(this.test.title) });
     it(`true Or false`, function() { roundtrip(this.test.title) });
-    it(`true||false`, function() { roundtrip(this.test.title) });
+    it.skip(`true||false`, function() { roundtrip(this.test.title) });
     it(`false Or false Or true`, function() { roundtrip(this.test.title) });
     it(`And(true,true,true)`, function() { roundtrip(this.test.title) });
     it(`And(true,true,false)`, function() { roundtrip(this.test.title) });
@@ -50,17 +50,17 @@ describe('examples', function() {
     it(`Or(true, 1/0=1)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('ArgCoercion', function() {
+  describe('ArgCoercion', function() {
     it(`Char("55")`, function() { roundtrip(this.test.title) });
     it(`Char("Should be Error")`, function() { roundtrip(this.test.title) });
     it(`Char(["55", "56", "57"])`, function() { roundtrip(this.test.title) });
     it(`Char(["55", "Error Coercion", "57"])`, function() { roundtrip(this.test.title) });
     it(`Concatenate(123, "456")`, function() { roundtrip(this.test.title) });
-    it(`Concatenate(-1, ["456", "abc"] )`, function() { roundtrip(this.test.title) });
-    it(`Concatenate([-1, 123], ["456", "abc"] )`, function() { roundtrip(this.test.title) });
+    it.skip(`Concatenate(-1, ["456", "abc"] )`, function() { roundtrip(this.test.title) });
+    it.skip(`Concatenate([-1, 123], ["456", "abc"] )`, function() { roundtrip(this.test.title) });
     it(`IsToday(100)`, function() { roundtrip(this.test.title) });
     it(`Len(2345)`, function() { roundtrip(this.test.title) });
-    it(`Len([123, -2344566, 0567])`, function() { roundtrip(this.test.title) });
+    it.skip(`Len([123, -2344566, 0567])`, function() { roundtrip(this.test.title) });
     it(`Day(Average(Date(1900, 1, 2), Date(1900, 1, 4)))`, function() { roundtrip(this.test.title) });
     it(`Day(Average(Date(1900, 2, 28), Date(1900, 3, 1)))`, function() { roundtrip(this.test.title) });
     it(`Day("01-01-2001")`, function() { roundtrip(this.test.title) });
@@ -72,38 +72,38 @@ describe('examples', function() {
     it(`Hour(If(false, "hi", Blank()))`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('arithmetic', function() {
+  describe('arithmetic', function() {
     it(`1`, function() { roundtrip(this.test.title) });
-    it(`1.0`, function() { roundtrip(this.test.title) });
-    it(`1.5`, function() { roundtrip(this.test.title) });
-    it(`2.0e-4`, function() { roundtrip(this.test.title) });
+    it.skip(`1.0`, function() { roundtrip(this.test.title) });
+    it.skip(`1.5`, function() { roundtrip(this.test.title) });
+    it.skip(`2.0e-4`, function() { roundtrip(this.test.title) });
     it(`1+2`, function() { roundtrip(this.test.title) });
     it(`1 + (1/0)`, function() { roundtrip(this.test.title) });
     it(`1 - (1/0)`, function() { roundtrip(this.test.title) });
     it(`1 * (1/0)`, function() { roundtrip(this.test.title) });
     it(`1 / (1/0)`, function() { roundtrip(this.test.title) });
     it(`5-3`, function() { roundtrip(this.test.title) });
-    it(`-3`, function() { roundtrip(this.test.title) });
-    it(`-(1/0)`, function() { roundtrip(this.test.title) });
-    it(`5 - -3`, function() { roundtrip(this.test.title) });
-    it(`-(5+3)`, function() { roundtrip(this.test.title) });
+    it.skip(`-3`, function() { roundtrip(this.test.title) });
+    it.skip(`-(1/0)`, function() { roundtrip(this.test.title) });
+    it.skip(`5 - -3`, function() { roundtrip(this.test.title) });
+    it.skip(`-(5+3)`, function() { roundtrip(this.test.title) });
     it(`2*3`, function() { roundtrip(this.test.title) });
     it(`15/3`, function() { roundtrip(this.test.title) });
     it(`1/2`, function() { roundtrip(this.test.title) });
-    it(`20%`, function() { roundtrip(this.test.title) });
-    it(`200%`, function() { roundtrip(this.test.title) });
-    it(`(1/0)%`, function() { roundtrip(this.test.title) });
-    it(`1 * 50%`, function() { roundtrip(this.test.title) });
+    it.skip(`20%`, function() { roundtrip(this.test.title) });
+    it.skip(`200%`, function() { roundtrip(this.test.title) });
+    it.skip(`(1/0)%`, function() { roundtrip(this.test.title) });
+    it.skip(`1 * 50%`, function() { roundtrip(this.test.title) });
     it(`1+2*3`, function() { roundtrip(this.test.title) });
     it(`1=1`, function() { roundtrip(this.test.title) });
     it(`1<>1`, function() { roundtrip(this.test.title) });
     it(`6>5`, function() { roundtrip(this.test.title) });
     it(`5>6`, function() { roundtrip(this.test.title) });
-    it(`5.0>5`, function() { roundtrip(this.test.title) });
+    it.skip(`5.0>5`, function() { roundtrip(this.test.title) });
     it(`5>=5`, function() { roundtrip(this.test.title) });
     it(`5>=6`, function() { roundtrip(this.test.title) });
     it(`5 < 7`, function() { roundtrip(this.test.title) });
-    it(`-5 < 3`, function() { roundtrip(this.test.title) });
+    it.skip(`-5 < 3`, function() { roundtrip(this.test.title) });
     it(`5 < 5`, function() { roundtrip(this.test.title) });
     it(`5 <= 7`, function() { roundtrip(this.test.title) });
     it(`5 < 1/0`, function() { roundtrip(this.test.title) });
@@ -114,7 +114,7 @@ describe('examples', function() {
     it(`5 <> 1/0`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('BasicCoercion', function() {
+  describe('BasicCoercion', function() {
     it(`"Hello " & 42`, function() { roundtrip(this.test.title) });
     it(`42 & "Hello"`, function() { roundtrip(this.test.title) });
     it(`"2" + 3`, function() { roundtrip(this.test.title) });
@@ -123,24 +123,24 @@ describe('examples', function() {
     it(`("x" * "3")`, function() { roundtrip(this.test.title) });
     it(`true - false`, function() { roundtrip(this.test.title) });
     it(`1 + Blank()`, function() { roundtrip(this.test.title) });
-    it(`7 && 0`, function() { roundtrip(this.test.title) });
-    it(`0 || 7`, function() { roundtrip(this.test.title) });
-    it(`"true" && "anything"`, function() { roundtrip(this.test.title) });
-    it(`"anything" || "true"`, function() { roundtrip(this.test.title) });
-    it(`true && !Blank()`, function() { roundtrip(this.test.title) });
-    it(`Date(2000,1,2) && 1`, function() { roundtrip(this.test.title) });
+    it.skip(`7 && 0`, function() { roundtrip(this.test.title) });
+    it.skip(`0 || 7`, function() { roundtrip(this.test.title) });
+    it.skip(`"true" && "anything"`, function() { roundtrip(this.test.title) });
+    it.skip(`"anything" || "true"`, function() { roundtrip(this.test.title) });
+    it.skip(`true && !Blank()`, function() { roundtrip(this.test.title) });
+    it.skip(`Date(2000,1,2) && 1`, function() { roundtrip(this.test.title) });
     it(`If(Date(2000,1,1),1,2)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Blank', function() {
+  describe('Blank', function() {
     it(`If(true, 2,Blank())`, function() { roundtrip(this.test.title) });
     it(`If(false, 2,Blank())`, function() { roundtrip(this.test.title) });
     it(`If(false, Blank(), "hi")`, function() { roundtrip(this.test.title) });
     it(`Blank() - Blank()`, function() { roundtrip(this.test.title) });
     it(`Blank() + Blank()`, function() { roundtrip(this.test.title) });
-    it(`-5 < Blank()`, function() { roundtrip(this.test.title) });
+    it.skip(`-5 < Blank()`, function() { roundtrip(this.test.title) });
     it(`5 < Blank()`, function() { roundtrip(this.test.title) });
-    it(`Blank()%`, function() { roundtrip(this.test.title) });
+    it.skip(`Blank()%`, function() { roundtrip(this.test.title) });
     it(`Blank() =0 `, function() { roundtrip(this.test.title) });
     it(`Blank() <> 0`, function() { roundtrip(this.test.title) });
     it(`0 = Blank()`, function() { roundtrip(this.test.title) });
@@ -150,7 +150,7 @@ describe('examples', function() {
     it(`IsBlank("")`, function() { roundtrip(this.test.title) });
     it(`IsBlank(" ")`, function() { roundtrip(this.test.title) });
     it(`IsBlank(Blank())`, function() { roundtrip(this.test.title) });
-    it(`Not(Blank())`, function() { roundtrip(this.test.title) });
+    it.skip(`Not(Blank())`, function() { roundtrip(this.test.title) });
     it(`IsBlank(false)`, function() { roundtrip(this.test.title) });
     it(`IsBlank(true)`, function() { roundtrip(this.test.title) });
     it(`IsBlank( If( false, false ) )`, function() { roundtrip(this.test.title) });
@@ -161,10 +161,10 @@ describe('examples', function() {
     it(`Blank() = ""`, function() { roundtrip(this.test.title) });
     it(`Blank() <> ""`, function() { roundtrip(this.test.title) });
     it(`IsBlank(Blank() + Blank())`, function() { roundtrip(this.test.title) });
-    it(`Blank(`, function() { roundtrip(this.test.title) });
+    it.skip(`Blank(`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Boolean', function() {
+  describe('Boolean', function() {
     it(`Boolean("true")`, function() { roundtrip(this.test.title) });
     it(`Boolean("false")`, function() { roundtrip(this.test.title) });
     it(`Boolean("x")`, function() { roundtrip(this.test.title) });
@@ -181,7 +181,7 @@ describe('examples', function() {
     it(`Boolean(false)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Coalesce', function() {
+  describe('Coalesce', function() {
     it(`Coalesce( Blank(), 1 )`, function() { roundtrip(this.test.title) });
     it(`Coalesce( "", "x" )`, function() { roundtrip(this.test.title) });
     it(`Coalesce( Blank(), "", Blank(), "", "3", "4" )`, function() { roundtrip(this.test.title) });

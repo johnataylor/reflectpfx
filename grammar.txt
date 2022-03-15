@@ -6,12 +6,12 @@ bexpression:
   expression <> bexpression
   expression <= bexpression
   expression >= bexpression
-
-// probably a bug - in that yuou should be able to have bexpressions as arguments
+  expression And bexpression
+  expression Or bexpression
 
 args:
-  expression , args
-  expression
+  bexpression , args
+  bexpression
 
 expression:
   term + expression
@@ -35,6 +35,10 @@ primary:
   NAME ( )
   - primary
   ( expression )
+  [ args ]
+  And ( args )
+  Or ( args )
+  Not ( arg )
+  Not arg
 
 // probably a bug - is dot notation actually the root?
-

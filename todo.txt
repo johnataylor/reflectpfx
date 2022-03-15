@@ -1,19 +1,22 @@
 lexer and parser
 ----------------
 
+unary minus
 number literals
 !
-&&
-||
+&& and || precedence
 %
 dot operator
+tighten up And() Or() and Not() implementation
+lexer recognize build in funtions and keywords
 string interpolation
-
+comments
 
 engineering
 -----------
 
-- mocha tests
-- switch case formating
+- clean up prim
 - pointers to underlying tokens (and therefore index)
+- parse tree operator type (note hack on ' and ' and ' or ')
+- parse tree operator printing
 
