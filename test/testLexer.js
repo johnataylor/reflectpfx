@@ -120,6 +120,34 @@ describe('literals', function() {
             assert.equal('123', tokens[0].value);
             assert.equal('END', tokens[1].type);
         });
+        it('numbers with decimal place should be tokenized', function(){
+            var tokens = lexer.tokenize('1.4');
+            assert.equal(2, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('1.4', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
+        it('multi-digit numbers with decimal place should be tokenized', function(){
+            var tokens = lexer.tokenize('123.456');
+            assert.equal(2, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('123.456', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
+        it('numbers with leading decimal place should be tokenized', function(){
+            var tokens = lexer.tokenize('.99');
+            assert.equal(2, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('.99', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
+        it('dot should not be tokenized as a number', function(){
+            var tokens = lexer.tokenize('.');
+            assert.equal(2, tokens.length)
+            assert.equal('DOT', tokens[0].type);
+            assert.equal('.', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
         it('multiple numbers should be tokenized', function(){
             var tokens = lexer.tokenize('123 456 789');
             assert.equal(6, tokens.length)
@@ -130,6 +158,19 @@ describe('literals', function() {
             assert.equal('NUMBER', tokens[4].type);
             assert.equal('789', tokens[4].value);
             assert.equal('END', tokens[5].type);
+        });
+        it('multiple numbers with decimal places should be tokenized', function(){
+            var tokens = lexer.tokenize('1.3 3.1415 42 .99999');
+            assert.equal(8, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('1.3', tokens[0].value);
+            assert.equal('NUMBER', tokens[2].type);
+            assert.equal('3.1415', tokens[2].value);
+            assert.equal('NUMBER', tokens[4].type);
+            assert.equal('42', tokens[4].value);
+            assert.equal('NUMBER', tokens[6].type);
+            assert.equal('.99999', tokens[6].value);
+            assert.equal('END', tokens[7].type);
         });
     });
     describe('strings', function() {

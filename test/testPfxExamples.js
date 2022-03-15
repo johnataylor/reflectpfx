@@ -74,8 +74,8 @@ describe('examples', function() {
 
   describe('arithmetic', function() {
     it(`1`, function() { roundtrip(this.test.title) });
-    it.skip(`1.0`, function() { roundtrip(this.test.title) });
-    it.skip(`1.5`, function() { roundtrip(this.test.title) });
+    it(`1.0`, function() { roundtrip(this.test.title) });
+    it(`1.5`, function() { roundtrip(this.test.title) });
     it.skip(`2.0e-4`, function() { roundtrip(this.test.title) });
     it(`1+2`, function() { roundtrip(this.test.title) });
     it(`1 + (1/0)`, function() { roundtrip(this.test.title) });
@@ -99,7 +99,7 @@ describe('examples', function() {
     it(`1<>1`, function() { roundtrip(this.test.title) });
     it(`6>5`, function() { roundtrip(this.test.title) });
     it(`5>6`, function() { roundtrip(this.test.title) });
-    it.skip(`5.0>5`, function() { roundtrip(this.test.title) });
+    it(`5.0>5`, function() { roundtrip(this.test.title) });
     it(`5>=5`, function() { roundtrip(this.test.title) });
     it(`5>=6`, function() { roundtrip(this.test.title) });
     it(`5 < 7`, function() { roundtrip(this.test.title) });
@@ -347,8 +347,8 @@ describe('examples', function() {
     it(`Second(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, "Seconds"))`, function() { roundtrip(this.test.title) });
     it.skip(`Hour(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, TimeUnit.Hours))`, function() { roundtrip(this.test.title) });
     it.skip(`Minute(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, TimeUnit.Minutes))`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(DateTimeValue("02/14/2001 6:00 AM") - 0.5)`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(DateTimeValue("02/14/2001 6:00 AM") + 0.0417)`, function() { roundtrip(this.test.title) });
+    it(`Text(DateTimeValue("02/14/2001 6:00 AM") - 0.5)`, function() { roundtrip(this.test.title) });
+    it(`Text(DateTimeValue("02/14/2001 6:00 AM") + 0.0417)`, function() { roundtrip(this.test.title) });
     it.skip(`Text(DateTimeValue("02/14/2001 6:00 AM") + 7e-4)`, function() { roundtrip(this.test.title) });
     it.skip(`Second(DateTimeValue("02/14/2001 6:00 AM") - 1.1574e-5)`, function() { roundtrip(this.test.title) });
   });
@@ -362,10 +362,10 @@ describe('examples', function() {
     it(`true = false`, function() { roundtrip(this.test.title) });
     it(`true <> true`, function() { roundtrip(this.test.title) });
     it(`true <> false`, function() { roundtrip(this.test.title) });
-    it.skip(`1.0 = 1.0`, function() { roundtrip(this.test.title) });
-    it.skip(`1.0 <> 1.0`, function() { roundtrip(this.test.title) });
-    it.skip(`1.0 <> 1.1`, function() { roundtrip(this.test.title) });
-    it.skip(`1.0 = 1.1`, function() { roundtrip(this.test.title) });
+    it(`1.0 = 1.0`, function() { roundtrip(this.test.title) });
+    it(`1.0 <> 1.0`, function() { roundtrip(this.test.title) });
+    it(`1.0 <> 1.1`, function() { roundtrip(this.test.title) });
+    it(`1.0 = 1.1`, function() { roundtrip(this.test.title) });
     it(`"foo" = "foo"`, function() { roundtrip(this.test.title) });
     it(`"foo" <> "foo"`, function() { roundtrip(this.test.title) });
     it(`"foo" = "bar"`, function() { roundtrip(this.test.title) });
@@ -443,7 +443,7 @@ describe('examples', function() {
     it(`Find(",", "LastName,FirstName")`, function() { roundtrip(this.test.title) });
     it(`Find(",", "LastName,FirstName", 2)`, function() { roundtrip(this.test.title) });
     it(`Find(",", "LastName,FirstName", 9)`, function() { roundtrip(this.test.title) });
-    it.skip(`Find(",", "LastName,FirstName", 9.5)`, function() { roundtrip(this.test.title) });
+    it(`Find(",", "LastName,FirstName", 9.5)`, function() { roundtrip(this.test.title) });
     it(`Find(",", "LastName,FirstName", 10)`, function() { roundtrip(this.test.title) });
     it(`Find("#", "LastName,FirstName")`, function() { roundtrip(this.test.title) });
     it(`Find("#", "LastName,FirstName", 3)`, function() { roundtrip(this.test.title) });
@@ -654,8 +654,8 @@ describe('examples', function() {
     it(`sNumeric("A")`, function() { roundtrip(this.test.title) });
     it(`sNumeric(123)`, function() { roundtrip(this.test.title) });
     it(`sNumeric(-123)`, function() { roundtrip(this.test.title) });
-    it.skip(`sNumeric(-123.1)`, function() { roundtrip(this.test.title) });
-    it.skip(`sNumeric(123.1)`, function() { roundtrip(this.test.title) });
+    it(`sNumeric(-123.1)`, function() { roundtrip(this.test.title) });
+    it(`sNumeric(123.1)`, function() { roundtrip(this.test.title) });
     it(`sNumeric("1" + 2)`, function() { roundtrip(this.test.title) });
     it(`sNumeric(1/0)`, function() { roundtrip(this.test.title) });
     it(`sNumeric(Blank())`, function() { roundtrip(this.test.title) });
@@ -697,7 +697,7 @@ describe('examples', function() {
   });
 
   describe('literals', function() {
-    it.skip(`1.0`, function() { roundtrip(this.test.title) });
+    it(`1.0`, function() { roundtrip(this.test.title) });
     it(`"abc"`, function() { roundtrip(this.test.title) });
     it.skip(`{b : 2, a: 1}`, function() { roundtrip(this.test.title) });
     it(`[1,4,2,7]`, function() { roundtrip(this.test.title) });
@@ -711,9 +711,9 @@ describe('examples', function() {
     it(`Log(1/0)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('mathfuncs', function() {
+  describe('mathfuncs', function() {
     it(`Average(1,0,5)`, function() { roundtrip(this.test.title) });
-    it(`Average("1",0,5) // coerce`, function() { roundtrip(this.test.title) });
+    it.skip(`Average("1",0,5) // coerce`, function() { roundtrip(this.test.title) });
     it(`Average(Blank())`, function() { roundtrip(this.test.title) });
     it(`Average(1,Blank(),5)`, function() { roundtrip(this.test.title) });
     it(`Sum(1,2)`, function() { roundtrip(this.test.title) });
@@ -748,8 +748,8 @@ describe('examples', function() {
     it(`Round(Exp(2), 2)`, function() { roundtrip(this.test.title) });
     it(`Exp(Blank())`, function() { roundtrip(this.test.title) });
     it(`Exp(1/0)`, function() { roundtrip(this.test.title) });
-    it(`2^3`, function() { roundtrip(this.test.title) });
-    it(`2^-2`, function() { roundtrip(this.test.title) });
+    it.skip(`2^3`, function() { roundtrip(this.test.title) });
+    it.skip(`2^-2`, function() { roundtrip(this.test.title) });
     it(`Max(Blank(), 100, -5, "2000", Value("2001"), Text(2002))`, function() { roundtrip(this.test.title) });
     it(`Min(-100, If(true, -1000, 200))`, function() { roundtrip(this.test.title) });
     it(`Round(1.5, 0)`, function() { roundtrip(this.test.title) });
@@ -874,8 +874,8 @@ describe('examples', function() {
     it(`Sequence(4)`, function() { roundtrip(this.test.title) });
     it(`Sequence(4,24)`, function() { roundtrip(this.test.title) });
     it(`Sequence(4,4,-1)`, function() { roundtrip(this.test.title) });
-    it.skip(`Sequence(4,-100,0.5)`, function() { roundtrip(this.test.title) });
-    it.skip(`Sequence(.9)`, function() { roundtrip(this.test.title) });
+    it(`Sequence(4,-100,0.5)`, function() { roundtrip(this.test.title) });
+    it(`Sequence(.9)`, function() { roundtrip(this.test.title) });
     it(`Sequence(Blank())`, function() { roundtrip(this.test.title) });
     it(`Sequence(4,Blank())`, function() { roundtrip(this.test.title) });
     it(`Sequence(4,24,Blank())`, function() { roundtrip(this.test.title) });
@@ -935,7 +935,7 @@ describe('examples', function() {
     it(`Right("foo", Blank())`, function() { roundtrip(this.test.title) });
     it(`Mid("foobar", 2, 3)`, function() { roundtrip(this.test.title) });
     it(`Mid("foobar", 3)`, function() { roundtrip(this.test.title) });
-    it.skip(`Mid("abcdef", 3.1, 1.9)`, function() { roundtrip(this.test.title) });
+    it(`Mid("abcdef", 3.1, 1.9)`, function() { roundtrip(this.test.title) });
     it(`Mid("foo" & "bar", If(false, 1, 2), 8/4)`, function() { roundtrip(this.test.title) });
     it(`Mid("foo", 100)`, function() { roundtrip(this.test.title) });
     it(`Mid("bar", -1)`, function() { roundtrip(this.test.title) });
@@ -1123,15 +1123,15 @@ describe('examples', function() {
 
   describe('Text', function() {
     it(`Text(123)`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(123.4)`, function() { roundtrip(this.test.title) });
+    it(`Text(123.4)`, function() { roundtrip(this.test.title) });
     it(`Text(10*10)`, function() { roundtrip(this.test.title) });
     it(`Text(1/2)`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(123.4, "#.000")`, function() { roundtrip(this.test.title) });
+    it(`Text(123.4, "#.000")`, function() { roundtrip(this.test.title) });
     it(`Text(Blank(), "#.000")`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(123.4, Blank())`, function() { roundtrip(this.test.title) });
+    it(`Text(123.4, Blank())`, function() { roundtrip(this.test.title) });
     it(`Text(1/0, "#.000")`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(0.5, ".##")`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(1.5, "000")`, function() { roundtrip(this.test.title) });
+    it(`Text(0.5, ".##")`, function() { roundtrip(this.test.title) });
+    it(`Text(1.5, "000")`, function() { roundtrip(this.test.title) });
     it(`Text(123456789, "#,#")`, function() { roundtrip(this.test.title) });
     it(`Text(123456789, "#,###")`, function() { roundtrip(this.test.title) });
     it(`Text(123456789, "0,0.0")`, function() { roundtrip(this.test.title) });
@@ -1150,7 +1150,7 @@ describe('examples', function() {
     it(`Text(Date(2018, 3, 15), "MM-dd-yyyy")`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Time', function() {
+  describe('Time', function() {
     it(`Text(Time(1, 2, 3))`, function() { roundtrip(this.test.title) });
     it(`Hour(Time(1, 2, 3))`, function() { roundtrip(this.test.title) });
     it(`Minute(Time(1, 2, 3))`, function() { roundtrip(this.test.title) });
@@ -1195,7 +1195,7 @@ describe('examples', function() {
     it(`Second(Time(1, 2, 3) + Date(2011, 2, 3))`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Value', function() {
+  describe('Value', function() {
     it(`Value("-5")`, function() { roundtrip(this.test.title) });
     it(`Value("5")`, function() { roundtrip(this.test.title) });
     it(`Value("0")`, function() { roundtrip(this.test.title) });
@@ -1223,7 +1223,7 @@ describe('examples', function() {
     it(`Value(Date(1900, 3, 1)) - Value(Date(1900, 2, 28))`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Weekday', function() {
+  describe('Weekday', function() {
     it(`Weekday(Date(2020,7,16))`, function() { roundtrip(this.test.title) });
     it(`WeekNum(Date(2019,1,6))`, function() { roundtrip(this.test.title) });
     it(`ISOWeekNum(Date(2019,1,6))`, function() { roundtrip(this.test.title) });

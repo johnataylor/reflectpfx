@@ -1,7 +1,7 @@
 lexer and parser
 ----------------
 
-number literals
+number literals including exponent
 !
 && and || precedence
 %
@@ -9,6 +9,7 @@ dot operator
 as
 in
 exactin
+BUG: lexer recognizes keywoprds prepending names
 tighten up And() Or() and Not() implementation
 lexer recognize build in funtions and keywords
 string interpolation
