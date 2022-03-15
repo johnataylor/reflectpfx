@@ -3,11 +3,11 @@ const roundtrip = require('./testHelper.js').roundtrip;
 describe('examples', function() {
 
   describe('Acumatica', function() {
-    it.skip(`RoundUp(Month(Date(2011,5,12))/3,0) & " Q"`, function() { roundtrip(this.test.title) });
+    it(`RoundUp(Month(Date(2011,5,12))/3,0) & " Q"`, function() { roundtrip(this.test.title) });
     it(`Mid("abc", 2,1)`, function() { roundtrip(this.test.title) });
     it(`Mid("abc", 2)`, function() { roundtrip(this.test.title) });
     it(`Len("abc")`, function() { roundtrip(this.test.title) });
-    it.skip(`RoundUp(Month(Date(2011,5,12))/3,0)`, function() { roundtrip(this.test.title) });
+    it(`RoundUp(Month(Date(2011,5,12))/3,0)`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2020,3,1), Today()) > 0`, function() { roundtrip(this.test.title) });
     it(`Year(Date(2011,5,12))`, function() { roundtrip(this.test.title) });
     it(`Abs(-5)`, function() { roundtrip(this.test.title) });
