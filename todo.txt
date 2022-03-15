@@ -1,12 +1,14 @@
 lexer and parser
 ----------------
 
-unary minus
 number literals
 !
 && and || precedence
 %
 dot operator
+as
+in
+exactin
 tighten up And() Or() and Not() implementation
 lexer recognize build in funtions and keywords
 string interpolation
