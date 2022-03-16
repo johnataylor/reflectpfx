@@ -150,7 +150,7 @@ describe('examples', function() {
     it(`IsBlank("")`, function() { roundtrip(this.test.title) });
     it(`IsBlank(" ")`, function() { roundtrip(this.test.title) });
     it(`IsBlank(Blank())`, function() { roundtrip(this.test.title) });
-    it.skip(`Not(Blank())`, function() { roundtrip(this.test.title) });
+    it(`Not(Blank())`, function() { roundtrip(this.test.title) });
     it(`IsBlank(false)`, function() { roundtrip(this.test.title) });
     it(`IsBlank(true)`, function() { roundtrip(this.test.title) });
     it(`IsBlank( If( false, false ) )`, function() { roundtrip(this.test.title) });
