@@ -141,6 +141,34 @@ describe('literals', function() {
             assert.equal('.99', tokens[0].value);
             assert.equal('END', tokens[1].type);
         });
+        it('numbers with decimal and - exponent should be tokenized', function(){
+            var tokens = lexer.tokenize('1.23e-4');
+            assert.equal(2, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('1.23e-4', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
+        it('numbers with - exponent should be tokenized', function(){
+            var tokens = lexer.tokenize('7e-4');
+            assert.equal(2, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('7e-4', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
+        it('numbers with + exponent should be tokenized', function(){
+            var tokens = lexer.tokenize('1.23e+4');
+            assert.equal(2, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('1.23e+4', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
+        it('numbers with no sign in exponent should be tokenized', function(){
+            var tokens = lexer.tokenize('1.23e4');
+            assert.equal(2, tokens.length)
+            assert.equal('NUMBER', tokens[0].type);
+            assert.equal('1.23e4', tokens[0].value);
+            assert.equal('END', tokens[1].type);
+        });
         it('dot should not be tokenized as a number', function(){
             var tokens = lexer.tokenize('.');
             assert.equal(2, tokens.length)
@@ -159,9 +187,9 @@ describe('literals', function() {
             assert.equal('789', tokens[4].value);
             assert.equal('END', tokens[5].type);
         });
-        it('multiple numbers with decimal places should be tokenized', function(){
-            var tokens = lexer.tokenize('1.3 3.1415 42 .99999');
-            assert.equal(8, tokens.length)
+        it('multiple numbers of all kinds should be tokenized', function(){
+            var tokens = lexer.tokenize('1.3 3.1415 42 .99999 1.23e-4 64');
+            assert.equal(12, tokens.length)
             assert.equal('NUMBER', tokens[0].type);
             assert.equal('1.3', tokens[0].value);
             assert.equal('NUMBER', tokens[2].type);
@@ -170,7 +198,11 @@ describe('literals', function() {
             assert.equal('42', tokens[4].value);
             assert.equal('NUMBER', tokens[6].type);
             assert.equal('.99999', tokens[6].value);
-            assert.equal('END', tokens[7].type);
+            assert.equal('NUMBER', tokens[8].type);
+            assert.equal('1.23e-4', tokens[8].value);
+            assert.equal('NUMBER', tokens[10].type);
+            assert.equal('64', tokens[10].value);
+            assert.equal('END', tokens[11].type);
         });
     });
     describe('strings', function() {
