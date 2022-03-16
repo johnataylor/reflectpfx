@@ -1,18 +1,13 @@
 lexer and parser
 ----------------
 
-localized decimal separator in numbers
 !
-&& and || precedence
 %
+inline record { }
 dot operator
 as
-in
-exactin
-BUG: lexer recognizes keywoprds prepending names
-tighten up And() Or() and Not() implementation
-lexer recognize build in funtions and keywords
 string interpolation
+localized decimal separator in numbers
 comments
 
 engineering
@@ -20,6 +15,6 @@ engineering
 
 - clean up prim
 - pointers to underlying tokens (and therefore index)
-- parse tree operator type (note hack on ' and ' and ' or ')
+- parse tree operator type (note hack of adding spaces on ' and ' and ' or ')
 - parse tree operator printing
 

@@ -36,11 +36,11 @@ describe('examples', function() {
     it(`Or(false)`, function() { roundtrip(this.test.title) });
     it(`And(true,false)`, function() { roundtrip(this.test.title) });
     it(`true And false`, function() { roundtrip(this.test.title) });
-    it.skip(`true && false`, function() { roundtrip(this.test.title) });
+    it(`true && false`, function() { roundtrip(this.test.title) });
     it(`true And true And false`, function() { roundtrip(this.test.title) });
     it(`Or(true,false)`, function() { roundtrip(this.test.title) });
     it(`true Or false`, function() { roundtrip(this.test.title) });
-    it.skip(`true||false`, function() { roundtrip(this.test.title) });
+    it(`true||false`, function() { roundtrip(this.test.title) });
     it(`false Or false Or true`, function() { roundtrip(this.test.title) });
     it(`And(true,true,true)`, function() { roundtrip(this.test.title) });
     it(`And(true,true,false)`, function() { roundtrip(this.test.title) });
@@ -123,12 +123,12 @@ describe('examples', function() {
     it(`("x" * "3")`, function() { roundtrip(this.test.title) });
     it(`true - false`, function() { roundtrip(this.test.title) });
     it(`1 + Blank()`, function() { roundtrip(this.test.title) });
-    it.skip(`7 && 0`, function() { roundtrip(this.test.title) });
-    it.skip(`0 || 7`, function() { roundtrip(this.test.title) });
-    it.skip(`"true" && "anything"`, function() { roundtrip(this.test.title) });
-    it.skip(`"anything" || "true"`, function() { roundtrip(this.test.title) });
+    it(`7 && 0`, function() { roundtrip(this.test.title) });
+    it(`0 || 7`, function() { roundtrip(this.test.title) });
+    it(`"true" && "anything"`, function() { roundtrip(this.test.title) });
+    it(`"anything" || "true"`, function() { roundtrip(this.test.title) });
     it.skip(`true && !Blank()`, function() { roundtrip(this.test.title) });
-    it.skip(`Date(2000,1,2) && 1`, function() { roundtrip(this.test.title) });
+    it(`Date(2000,1,2) && 1`, function() { roundtrip(this.test.title) });
     it(`If(Date(2000,1,1),1,2)`, function() { roundtrip(this.test.title) });
   });
 
@@ -590,7 +590,7 @@ describe('examples', function() {
     it(`If(false, 1, true, 2)`, function() { roundtrip(this.test.title) });
     it(`If(false, 1, false, 2)`, function() { roundtrip(this.test.title) });
     it(`If(false, 1, false, 2, 3)`, function() { roundtrip(this.test.title) });
-    it.skip(`If(false && true, false && true, false && true, false && true, false && true)`, function() { roundtrip(this.test.title) });
+    it(`If(false && true, false && true, false && true, false && true, false && true)`, function() { roundtrip(this.test.title) });
     it.skip(`If(1 > 2 || 1 = 0 || 1 <> 1 || 2 < 1 || 3 <= 2 || 2 >= 3 || !true || (!false && false), "foo")`, function() { roundtrip(this.test.title) });
     it(`If(false, "3", 2)`, function() { roundtrip(this.test.title) });
     it(`If(true, "3", 2)`, function() { roundtrip(this.test.title) });
@@ -850,16 +850,16 @@ describe('examples', function() {
     it(`ParseJson("5") <= ParseJson("5")`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Rand', function() {
+  describe('Rand', function() {
     it(`andBetween(1, 1)`, function() { roundtrip(this.test.title) });
     it(`sError(RandBetween(5, 1))`, function() { roundtrip(this.test.title) });
     it(`andBetween(Blank(),1)`, function() { roundtrip(this.test.title) });
     it(`sError(RandBetween(1/0, 1))`, function() { roundtrip(this.test.title) });
     it(`sError(RandBetween(0, 1/0))`, function() { roundtrip(this.test.title) });
     it(`andBetween(100.5, 100.7)`, function() { roundtrip(this.test.title) });
-    it(`Sum(Sequence(100), With({RandomNumber: RandBetween(1,20)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
-    it(`Sum(Sequence(100), With({RandomNumber: RandBetween(2-1,50-30)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
-    it(`Sum(Sequence(100), With({RandomNumber: Rand()}, If(RandomNumber > 0 && RandomNumber < 1.0, 1, 0)))`, function() { roundtrip(this.test.title) });
+    it.skip(`Sum(Sequence(100), With({RandomNumber: RandBetween(1,20)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
+    it.skip(`Sum(Sequence(100), With({RandomNumber: RandBetween(2-1,50-30)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
+    it.skip(`Sum(Sequence(100), With({RandomNumber: Rand()}, If(RandomNumber > 0 && RandomNumber < 1.0, 1, 0)))`, function() { roundtrip(this.test.title) });
   });
 
   describe.skip('Record', function() {
@@ -952,13 +952,13 @@ describe('examples', function() {
     it(`Len(If(true, "foo", "bar!"))`, function() { roundtrip(this.test.title) });
     it(`Len(Blank())`, function() { roundtrip(this.test.title) });
     it(`Len(Text(1/0, "#.000"))`, function() { roundtrip(this.test.title) });
-    it.skip(`"f" in "foo"`, function() { roundtrip(this.test.title) });
-    it.skip(`"f" in "FOO"`, function() { roundtrip(this.test.title) });
-    it.skip(`"F" in "foo"`, function() { roundtrip(this.test.title) });
-    it.skip(`"yes" in "no"`, function() { roundtrip(this.test.title) });
-    it.skip(`"A" exactin "BAR"`, function() { roundtrip(this.test.title) });
-    it.skip(`"a" exactin "BAR"`, function() { roundtrip(this.test.title) });
-    it.skip(`"A" exactin "bar"`, function() { roundtrip(this.test.title) });
+    it(`"f" in "foo"`, function() { roundtrip(this.test.title) });
+    it(`"f" in "FOO"`, function() { roundtrip(this.test.title) });
+    it(`"F" in "foo"`, function() { roundtrip(this.test.title) });
+    it(`"yes" in "no"`, function() { roundtrip(this.test.title) });
+    it(`"A" exactin "BAR"`, function() { roundtrip(this.test.title) });
+    it(`"a" exactin "BAR"`, function() { roundtrip(this.test.title) });
+    it(`"A" exactin "bar"`, function() { roundtrip(this.test.title) });
     it(`StartsWith("foo", "f")`, function() { roundtrip(this.test.title) });
     it(`StartsWith("FOO", "f")`, function() { roundtrip(this.test.title) });
     it(`StartsWith("FOO", "O")`, function() { roundtrip(this.test.title) });
