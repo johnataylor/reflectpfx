@@ -76,7 +76,7 @@ describe('examples', function() {
     it(`1`, function() { roundtrip(this.test.title) });
     it(`1.0`, function() { roundtrip(this.test.title) });
     it(`1.5`, function() { roundtrip(this.test.title) });
-    it.skip(`2.0e-4`, function() { roundtrip(this.test.title) });
+    it(`2.0e-4`, function() { roundtrip(this.test.title) });
     it(`1+2`, function() { roundtrip(this.test.title) });
     it(`1 + (1/0)`, function() { roundtrip(this.test.title) });
     it(`1 - (1/0)`, function() { roundtrip(this.test.title) });
@@ -349,8 +349,8 @@ describe('examples', function() {
     it.skip(`Minute(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, TimeUnit.Minutes))`, function() { roundtrip(this.test.title) });
     it(`Text(DateTimeValue("02/14/2001 6:00 AM") - 0.5)`, function() { roundtrip(this.test.title) });
     it(`Text(DateTimeValue("02/14/2001 6:00 AM") + 0.0417)`, function() { roundtrip(this.test.title) });
-    it.skip(`Text(DateTimeValue("02/14/2001 6:00 AM") + 7e-4)`, function() { roundtrip(this.test.title) });
-    it.skip(`Second(DateTimeValue("02/14/2001 6:00 AM") - 1.1574e-5)`, function() { roundtrip(this.test.title) });
+    it(`Text(DateTimeValue("02/14/2001 6:00 AM") + 7e-4)`, function() { roundtrip(this.test.title) });
+    it(`Second(DateTimeValue("02/14/2001 6:00 AM") - 1.1574e-5)`, function() { roundtrip(this.test.title) });
   });
 
   describe('Equality', function() {
@@ -599,7 +599,7 @@ describe('examples', function() {
     it(`If(1/0 = 7, 2, 3)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('inScalar', function() {
+  describe('inScalar', function() {
     it(`("a" & 1/0) in "abc"`, function() { roundtrip(this.test.title) });
     it(`"a" in ("abc" & 1/0)`, function() { roundtrip(this.test.title) });
     it(`"e" in "applE"`, function() { roundtrip(this.test.title) });

@@ -1,7 +1,7 @@
 lexer and parser
 ----------------
 
-number literals including exponent
+localized decimal separator in numbers
 !
 && and || precedence
 %

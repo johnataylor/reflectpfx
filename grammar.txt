@@ -1,4 +1,6 @@
 
+// also see https://docs.microsoft.com/en-us/power-platform/power-fx/expression-grammar
+
 bexpression:
   expression < bexpression
   expression > bexpression
@@ -8,6 +10,10 @@ bexpression:
   expression >= bexpression
   expression And bexpression
   expression Or bexpression
+  expression In bexpression
+  expression && bexpression
+  expression || bexpression
+  expression ExactIn bexpression
 
 args:
   bexpression , args
