@@ -127,7 +127,7 @@ describe('examples', function() {
     it(`0 || 7`, function() { roundtrip(this.test.title) });
     it(`"true" && "anything"`, function() { roundtrip(this.test.title) });
     it(`"anything" || "true"`, function() { roundtrip(this.test.title) });
-    it.skip(`true && !Blank()`, function() { roundtrip(this.test.title) });
+    it(`true && !Blank()`, function() { roundtrip(this.test.title) });
     it(`Date(2000,1,2) && 1`, function() { roundtrip(this.test.title) });
     it(`If(Date(2000,1,1),1,2)`, function() { roundtrip(this.test.title) });
   });
@@ -194,7 +194,7 @@ describe('examples', function() {
   });
 
   describe('Concat', function() {
-    it.skip(`Concat(ForAll(["a","b","c"], With({x:Value}, x)), Value)`, function() { roundtrip(this.test.title) });
+    it(`Concat(ForAll(["a","b","c"], With({x:Value}, x)), Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(ForAll(["a","b","c"] As x, With({x:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(ForAll(["a","b","c"] As x, With({y:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(["A", "B", "C"], ThisRecord.Value)`, function() { roundtrip(this.test.title) });
@@ -529,9 +529,9 @@ describe('examples', function() {
     it.skip(`Find("c", ["abc", Error({Kind: ErrorKind.Validation}), "cde"])`, function() { roundtrip(this.test.title) });
     it.skip(`Find(Table({ find: "a" }, { find: Error({Kind: ErrorKind.Validation}) }, { find: "b" }), "abc")`, function() { roundtrip(this.test.title) });
     it.skip(`Find(["a", Error({Kind: ErrorKind.Validation}), "b"], "abc")`, function() { roundtrip(this.test.title) });
-    it.skip(`Find(Table({ find: "a" }, { find: Mid("Hello", -1) }, { find: "b" }, If(1/0>2, { find: "e" }), { find: "c" }), Table({ within: "abc" }, If(Sqrt(-1)<0, { within: "err" }), { within: Left("err", -1) }, If(Right("err", -3) = "err", { within: "err" }), { within: "abc" }))`, function() { roundtrip(this.test.title) });
-    it.skip(`Find(Table({ find: "a" }, { find: "b" }, { find: "c" }), If(1/0>2,"abcdef"))`, function() { roundtrip(this.test.title) });
-    it.skip(`Find(If(Sqrt(-1)<0,"First second third"), Table({ within: "First" }, { within: "Second" }))`, function() { roundtrip(this.test.title) });
+    it(`Find(Table({ find: "a" }, { find: Mid("Hello", -1) }, { find: "b" }, If(1/0>2, { find: "e" }), { find: "c" }), Table({ within: "abc" }, If(Sqrt(-1)<0, { within: "err" }), { within: Left("err", -1) }, If(Right("err", -3) = "err", { within: "err" }), { within: "abc" }))`, function() { roundtrip(this.test.title) });
+    it(`Find(Table({ find: "a" }, { find: "b" }, { find: "c" }), If(1/0>2,"abcdef"))`, function() { roundtrip(this.test.title) });
+    it(`Find(If(Sqrt(-1)<0,"First second third"), Table({ within: "First" }, { within: "Second" }))`, function() { roundtrip(this.test.title) });
   });
 
   describe('First', function() {
@@ -591,7 +591,7 @@ describe('examples', function() {
     it(`If(false, 1, false, 2)`, function() { roundtrip(this.test.title) });
     it(`If(false, 1, false, 2, 3)`, function() { roundtrip(this.test.title) });
     it(`If(false && true, false && true, false && true, false && true, false && true)`, function() { roundtrip(this.test.title) });
-    it.skip(`If(1 > 2 || 1 = 0 || 1 <> 1 || 2 < 1 || 3 <= 2 || 2 >= 3 || !true || (!false && false), "foo")`, function() { roundtrip(this.test.title) });
+    it(`If(1 > 2 || 1 = 0 || 1 <> 1 || 2 < 1 || 3 <= 2 || 2 >= 3 || !true || (!false && false), "foo")`, function() { roundtrip(this.test.title) });
     it(`If(false, "3", 2)`, function() { roundtrip(this.test.title) });
     it(`If(true, "3", 2)`, function() { roundtrip(this.test.title) });
     it(`If(false, 3, "2")`, function() { roundtrip(this.test.title) });
@@ -624,7 +624,7 @@ describe('examples', function() {
     it(`"'" in "SQL literal '"`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('inTable', function() {
+  describe('inTable', function() {
     it(`2 in [1,2,3]`, function() { roundtrip(this.test.title) });
     it(`4 in [1,2,3]`, function() { roundtrip(this.test.title) });
     it(`1/0 in [1,2,3]`, function() { roundtrip(this.test.title) });
@@ -659,7 +659,7 @@ describe('examples', function() {
     it(`sNumeric("1" + 2)`, function() { roundtrip(this.test.title) });
     it(`sNumeric(1/0)`, function() { roundtrip(this.test.title) });
     it(`sNumeric(Blank())`, function() { roundtrip(this.test.title) });
-    it.skip(`sNumeric({RecordValue: 123})`, function() { roundtrip(this.test.title) });
+    it(`sNumeric({RecordValue: 123})`, function() { roundtrip(this.test.title) });
     it(`sNumeric([1,2,3,4])`, function() { roundtrip(this.test.title) });
   });
 
@@ -689,9 +689,9 @@ describe('examples', function() {
     it(`LastN(Blank())`, function() { roundtrip(this.test.title) });
     it(`LastN(Sort([-2, -1, 0, 1, 2], 1 / Value), 2)`, function() { roundtrip(this.test.title) });
     it(`LastN([1, 2, 3, 4, 5], 1/0)`, function() { roundtrip(this.test.title) });
-    it.skip(`LastN(Table({a:1, b:101}, {a:2}, {a:3}), 2)`, function() { roundtrip(this.test.title) });
-    it.skip(`LastN(Table({a:1}, {a:2}, {a:3}), 2)`, function() { roundtrip(this.test.title) });
-    it.skip(`LastN(Table({Value:1,Zulu:1}, {Value:2,Zulu:2}, {Value:3,Zulu:3}), 2)`, function() { roundtrip(this.test.title) });
+    it(`LastN(Table({a:1, b:101}, {a:2}, {a:3}), 2)`, function() { roundtrip(this.test.title) });
+    it(`LastN(Table({a:1}, {a:2}, {a:3}), 2)`, function() { roundtrip(this.test.title) });
+    it(`LastN(Table({Value:1,Zulu:1}, {Value:2,Zulu:2}, {Value:3,Zulu:3}), 2)`, function() { roundtrip(this.test.title) });
     it.skip(`Last(Filter([1,2,3],Value=4)).Value`, function() { roundtrip(this.test.title) });
     it(`LastN(Filter([1,2,3],Value=4),2)`, function() { roundtrip(this.test.title) });
   });
@@ -699,9 +699,9 @@ describe('examples', function() {
   describe('literals', function() {
     it(`1.0`, function() { roundtrip(this.test.title) });
     it(`"abc"`, function() { roundtrip(this.test.title) });
-    it.skip(`{b : 2, a: 1}`, function() { roundtrip(this.test.title) });
+    it(`{b : 2, a: 1}`, function() { roundtrip(this.test.title) });
     it(`[1,4,2,7]`, function() { roundtrip(this.test.title) });
-    it.skip(`Table({b:1,a:2},{a:4,b:3})`, function() { roundtrip(this.test.title) });
+    it(`Table({b:1,a:2},{a:4,b:3})`, function() { roundtrip(this.test.title) });
   });
 
   describe('Log', function() {
@@ -857,9 +857,9 @@ describe('examples', function() {
     it(`sError(RandBetween(1/0, 1))`, function() { roundtrip(this.test.title) });
     it(`sError(RandBetween(0, 1/0))`, function() { roundtrip(this.test.title) });
     it(`andBetween(100.5, 100.7)`, function() { roundtrip(this.test.title) });
-    it.skip(`Sum(Sequence(100), With({RandomNumber: RandBetween(1,20)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
-    it.skip(`Sum(Sequence(100), With({RandomNumber: RandBetween(2-1,50-30)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
-    it.skip(`Sum(Sequence(100), With({RandomNumber: Rand()}, If(RandomNumber > 0 && RandomNumber < 1.0, 1, 0)))`, function() { roundtrip(this.test.title) });
+    it(`Sum(Sequence(100), With({RandomNumber: RandBetween(1,20)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
+    it(`Sum(Sequence(100), With({RandomNumber: RandBetween(2-1,50-30)}, If(RandomNumber >=1 && RandomNumber <= 20, 1, 0)))`, function() { roundtrip(this.test.title) });
+    it(`Sum(Sequence(100), With({RandomNumber: Rand()}, If(RandomNumber > 0 && RandomNumber < 1.0, 1, 0)))`, function() { roundtrip(this.test.title) });
   });
 
   describe.skip('Record', function() {
@@ -1088,7 +1088,7 @@ describe('examples', function() {
     it(`Average([1, 2, 1/0, 4, 5], Value)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('TableStringfuncs', function() {
+  describe('TableStringfuncs', function() {
     it(`Concatenate("a", Table({b:"1"},{b:"2"}))`, function() { roundtrip(this.test.title) });
     it(`Concatenate("a", LastN(Table({b:"1"},{b:"2"}), 0))`, function() { roundtrip(this.test.title) });
     it(`Concatenate("a", If(1<0, ["txt"]))`, function() { roundtrip(this.test.title) });
@@ -1229,11 +1229,11 @@ describe('examples', function() {
     it(`ISOWeekNum(Date(2019,1,6))`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('With', function() {
+  describe('With', function() {
     it(`With(Blank(), Blank())`, function() { roundtrip(this.test.title) });
     it(`With( {y : 3} , y*y)`, function() { roundtrip(this.test.title) });
     it(`With({x : 5}, With({ x : x*2}, x))`, function() { roundtrip(this.test.title) });
-    it(`With(First(First(LastN(ForAll(Table({Value:1}, {Value:0}, {Value:2}), Table({a: 1/ThisRecord.Value})), 2)).Value), a * a)`, function() { roundtrip(this.test.title) });
+    it.skip(`With(First(First(LastN(ForAll(Table({Value:1}, {Value:0}, {Value:2}), Table({a: 1/ThisRecord.Value})), 2)).Value), a * a)`, function() { roundtrip(this.test.title) });
   });
 
 });

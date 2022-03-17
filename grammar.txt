@@ -40,11 +40,12 @@ primary:
   NAME ( args )
   NAME ( )
   - primary
+  ! bexpression
   ( expression )
   [ args ]
   And ( args )
   Or ( args )
-  Not ( arg )
-  Not arg
+  Not ( bexpression )
+  Not bexpression
 
 // probably a bug - is dot notation actually the root?

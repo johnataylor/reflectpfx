@@ -1,11 +1,11 @@
 lexer and parser
 ----------------
 
-!
 %
 inline record { }
 dot operator
 as
+allow trailing comma
 string interpolation
 localized decimal separator in numbers
 comments
