@@ -15,7 +15,7 @@ describe('examples', function() {
     it(`Coalesce("", "DefaultValue")`, function() { roundtrip(this.test.title) });
     it(`CountRows([10,30,20,40])`, function() { roundtrip(this.test.title) });
     it.skip(`CountIf([10,50,20,30], Value >= 30 ) // TaxDetails is a child table`, function() { roundtrip(this.test.title) });
-    it.skip(`Filter(Table({Name : "Alpha", Discount : 30 }, {Name:"Beta", Discount :45 }), Discount > 40)`, function() { roundtrip(this.test.title) });
+    it(`Filter(Table({Name : "Alpha", Discount : 30 }, {Name:"Beta", Discount :45 }), Discount > 40)`, function() { roundtrip(this.test.title) });
   });
 
   describe('AddColumns', function() {
@@ -138,7 +138,7 @@ describe('examples', function() {
     it(`If(false, Blank(), "hi")`, function() { roundtrip(this.test.title) });
     it(`Blank() - Blank()`, function() { roundtrip(this.test.title) });
     it(`Blank() + Blank()`, function() { roundtrip(this.test.title) });
-    it.skip(`-5 < Blank()`, function() { roundtrip(this.test.title) });
+    it(`-5 < Blank()`, function() { roundtrip(this.test.title) });
     it(`5 < Blank()`, function() { roundtrip(this.test.title) });
     it.skip(`Blank()%`, function() { roundtrip(this.test.title) });
     it(`Blank() =0 `, function() { roundtrip(this.test.title) });
@@ -197,7 +197,7 @@ describe('examples', function() {
     it(`Concat(ForAll(["a","b","c"], With({x:Value}, x)), Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(ForAll(["a","b","c"] As x, With({x:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(ForAll(["a","b","c"] As x, With({y:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`Concat(["A", "B", "C"], ThisRecord.Value)`, function() { roundtrip(this.test.title) });
+    it(`Concat(["A", "B", "C"], ThisRecord.Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(["A", "B", "C"] As X, X.Value)`, function() { roundtrip(this.test.title) });
     it(`Concat(["A", "B", "C"], Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(ForAll(["A","B"] As X,Concat(ForAll(["C","D"] As Y,X.Value&Y.Value),Value)),Value)`, function() { roundtrip(this.test.title) });
@@ -242,28 +242,28 @@ describe('examples', function() {
     it(`DateDiff(Date(2011,1,15), Date(Blank(), 2, 3))`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), Blank())`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2013,1,15) , Date(2012,1,30))`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Days)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Days)`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "Days")`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "days")`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "DaYs")`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2013,1,15) , Date(2012,1,30), TimeUnit.Days)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2013,1,15) , Date(2012,1,30), TimeUnit.Days)`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "milliseconds")`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "seconds")`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "minutes")`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "hours")`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), "quarters")`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2011,1,15) , Date(2011,7,30), "quarters")`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Milliseconds)`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Seconds)`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Minutes)`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Hours)`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Quarters)`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2011,1,15) , Date(2011,7,30), TimeUnit.Quarters)`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2021,1,1), Date(2000,1,1), TimeUnit.Years)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Milliseconds)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Seconds)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Minutes)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Hours)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2011,1,15) , Date(2011,1,30), TimeUnit.Quarters)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2011,1,15) , Date(2011,7,30), TimeUnit.Quarters)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2021,1,1), Date(2000,1,1), TimeUnit.Years)`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2021,1,1), Date(2000,1,1), "Years")`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2021,1,1), Date(2021,2,1), TimeUnit.Months)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2021,1,1), Date(2021,2,1), TimeUnit.Months)`, function() { roundtrip(this.test.title) });
     it(`DateDiff(Date(2021,1,1), Date(2021,2,1), "Months")`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Date(2021,1,1), Date(2021,1,20), TimeUnit.Months)`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Date(2021,1,1), Date(2021,1,20), TimeUnit.Months)`, function() { roundtrip(this.test.title) });
     it(`DateAdd(Date(2012,2,28), 1)`, function() { roundtrip(this.test.title) });
     it(`DateAdd(Date(2013,2,28), 1)`, function() { roundtrip(this.test.title) });
     it(`Day(DateAdd(Date(2012,2,28), 1))`, function() { roundtrip(this.test.title) });
@@ -314,9 +314,9 @@ describe('examples', function() {
     it(`Day(DateAdd(Date(2001,1,1), Blank()))`, function() { roundtrip(this.test.title) });
     it(`DateAdd(Date(-1, 2, 3), 3)`, function() { roundtrip(this.test.title) });
     it(`DateAdd(Date(Blank(), 2, 3), 3)`, function() { roundtrip(this.test.title) });
-    it.skip(`Day(DateAdd(Date(2001,1,1), 4, TimeUnit.Days))`, function() { roundtrip(this.test.title) });
+    it(`Day(DateAdd(Date(2001,1,1), 4, TimeUnit.Days))`, function() { roundtrip(this.test.title) });
     it(`DateAdd(Date(2011,1,15), 100000000, "milliseconds")`, function() { roundtrip(this.test.title) });
-    it.skip(`DateAdd(Date(2011,1,15), 100000000, TimeUnit.Milliseconds)`, function() { roundtrip(this.test.title) });
+    it(`DateAdd(Date(2011,1,15), 100000000, TimeUnit.Milliseconds)`, function() { roundtrip(this.test.title) });
     it(`Day(Date(2011,1,15) + 1)`, function() { roundtrip(this.test.title) });
     it(`Day(1 + Date(2011,1,15))`, function() { roundtrip(this.test.title) });
     it(`Day(Date(2011,1,15) - 1)`, function() { roundtrip(this.test.title) });
@@ -325,14 +325,14 @@ describe('examples', function() {
     it(`Day((Date(2011,1,15) - 1) - 1)`, function() { roundtrip(this.test.title) });
     it(`Day(Date(-1, 2, 3))`, function() { roundtrip(this.test.title) });
     it(`Day(Blank())`, function() { roundtrip(this.test.title) });
-    it.skip(`Month(DateAdd(Date(2001,1,1), 12, TimeUnit.Months))`, function() { roundtrip(this.test.title) });
-    it.skip(`Month(DateAdd(Date(2001,1,1), 3, TimeUnit.Quarters))`, function() { roundtrip(this.test.title) });
+    it(`Month(DateAdd(Date(2001,1,1), 12, TimeUnit.Months))`, function() { roundtrip(this.test.title) });
+    it(`Month(DateAdd(Date(2001,1,1), 3, TimeUnit.Quarters))`, function() { roundtrip(this.test.title) });
     it(`Month(DateAdd(Date(2001,1,1), 3, "Quarters"))`, function() { roundtrip(this.test.title) });
     it(`Month(DateAdd(Date(2001,1,1), 3, "quarters"))`, function() { roundtrip(this.test.title) });
     it(`Month(DateAdd(Date(2001,1,1), 3, "quaRTers"))`, function() { roundtrip(this.test.title) });
     it(`Month(Date(-1, 2, 3))`, function() { roundtrip(this.test.title) });
     it(`Month(Blank())`, function() { roundtrip(this.test.title) });
-    it.skip(`Year(DateAdd(Date(2001,1,1), 1, TimeUnit.Years))`, function() { roundtrip(this.test.title) });
+    it(`Year(DateAdd(Date(2001,1,1), 1, TimeUnit.Years))`, function() { roundtrip(this.test.title) });
     it(`Year(Date(-1, 2, 3))`, function() { roundtrip(this.test.title) });
     it(`Year(Blank())`, function() { roundtrip(this.test.title) });
     it(`Date(2001, 2, 14) + 2`, function() { roundtrip(this.test.title) });
@@ -343,10 +343,10 @@ describe('examples', function() {
     it(`Date(2001, 2, 14) = DateValue("2001-02-14")`, function() { roundtrip(this.test.title) });
     it(`DateValue("02-14-01") = DateValue("02/14/01")`, function() { roundtrip(this.test.title) });
     it(`DateValue("02/14/2001") = DateValue("2001-02-14")`, function() { roundtrip(this.test.title) });
-    it.skip(`Hour(DateAdd(DateAdd(DateTimeValue("01-01-2001 1:10:20"), TimeZoneOffset(), TimeUnit.Minutes), -TimeZoneOffset(), "Minutes"))`, function() { roundtrip(this.test.title) });
+    it(`Hour(DateAdd(DateAdd(DateTimeValue("01-01-2001 1:10:20"), TimeZoneOffset(), TimeUnit.Minutes), -TimeZoneOffset(), "Minutes"))`, function() { roundtrip(this.test.title) });
     it(`Second(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, "Seconds"))`, function() { roundtrip(this.test.title) });
-    it.skip(`Hour(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, TimeUnit.Hours))`, function() { roundtrip(this.test.title) });
-    it.skip(`Minute(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, TimeUnit.Minutes))`, function() { roundtrip(this.test.title) });
+    it(`Hour(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, TimeUnit.Hours))`, function() { roundtrip(this.test.title) });
+    it(`Minute(DateAdd(DateTimeValue("01-01-2001 1:10:20"), 1, TimeUnit.Minutes))`, function() { roundtrip(this.test.title) });
     it(`Text(DateTimeValue("02/14/2001 6:00 AM") - 0.5)`, function() { roundtrip(this.test.title) });
     it(`Text(DateTimeValue("02/14/2001 6:00 AM") + 0.0417)`, function() { roundtrip(this.test.title) });
     it(`Text(DateTimeValue("02/14/2001 6:00 AM") + 7e-4)`, function() { roundtrip(this.test.title) });
@@ -389,16 +389,16 @@ describe('examples', function() {
     it(`Sqrt(-1)`, function() { roundtrip(this.test.title) });
     it(`IsError(1/0)`, function() { roundtrip(this.test.title) });
     it(`IsError(1)`, function() { roundtrip(this.test.title) });
-    it.skip(`IsError(Error({Kind: ErrorKind.Validation}))`, function() { roundtrip(this.test.title) });
-    it.skip(`IsError(Error({Kind: 11}))`, function() { roundtrip(this.test.title) });
-    it.skip(`Error({Kind:ErrorKind.InvalidArgument})`, function() { roundtrip(this.test.title) });
-    it.skip(`Error({Kind:ErrorKind.Validation})`, function() { roundtrip(this.test.title) });
+    it(`IsError(Error({Kind: ErrorKind.Validation}))`, function() { roundtrip(this.test.title) });
+    it(`IsError(Error({Kind: 11}))`, function() { roundtrip(this.test.title) });
+    it(`Error({Kind:ErrorKind.InvalidArgument})`, function() { roundtrip(this.test.title) });
+    it(`Error({Kind:ErrorKind.Validation})`, function() { roundtrip(this.test.title) });
     it.skip(`Error({Kind:Validation}) // We need to use the fully-qualified enum value`, function() { roundtrip(this.test.title) });
     it.skip(`Error({Kind:"Validation"}) // Error kind needs to be numeric!`, function() { roundtrip(this.test.title) });
-    it.skip(`IfError(1/0, Error({Kind:FirstError.Kind}))`, function() { roundtrip(this.test.title) });
+    it(`IfError(1/0, Error({Kind:FirstError.Kind}))`, function() { roundtrip(this.test.title) });
     it(`IfError(1/0, 3)`, function() { roundtrip(this.test.title) });
-    it.skip(`IfError(1/0, FirstError.Kind)`, function() { roundtrip(this.test.title) });
-    it.skip(`IfError(Error({Kind:12}), FirstError.Kind)`, function() { roundtrip(this.test.title) });
+    it(`IfError(1/0, FirstError.Kind)`, function() { roundtrip(this.test.title) });
+    it(`IfError(Error({Kind:12}), FirstError.Kind)`, function() { roundtrip(this.test.title) });
     it(`IfError(0, 1, Sqrt(-2), 2)`, function() { roundtrip(this.test.title) });
     it.skip(`IfError(0, 1, Error({Kind: ErrorKind.Unknown}), 2)`, function() { roundtrip(this.test.title) });
     it(`IfError(1, 2)`, function() { roundtrip(this.test.title) });
@@ -408,27 +408,27 @@ describe('examples', function() {
     it.skip(`Not(IsBlank(1/0))`, function() { roundtrip(this.test.title) });
     it(`"Result: " & IfError(1/0, -1)`, function() { roundtrip(this.test.title) });
     it(`"Result: " & IfError(1, "error 1", 2, "error 2", "no error")`, function() { roundtrip(this.test.title) });
-    it.skip(`"Result: " & IfError({a:1, b:"hello"}, {a:2, b:"error"}).b`, function() { roundtrip(this.test.title) });
-    it.skip(`"Result: " & IfError(1, {a:1}, 2, {a:2}, {a:3}).a`, function() { roundtrip(this.test.title) });
-    it.skip(`"Result: " & IfError({a:{a1:true},b:"hello"}, {a:1,b:"error 1"}, {a:{a1:{a2:3}},b:"world"}, {a:1,b:"error 2"}, {a:1,b:"valid"}, {a:1,b:"error 3"}).a`, function() { roundtrip(this.test.title) });
+    it(`"Result: " & IfError({a:1, b:"hello"}, {a:2, b:"error"}).b`, function() { roundtrip(this.test.title) });
+    it(`"Result: " & IfError(1, {a:1}, 2, {a:2}, {a:3}).a`, function() { roundtrip(this.test.title) });
+    it(`"Result: " & IfError({a:{a1:true},b:"hello"}, {a:1,b:"error 1"}, {a:{a1:{a2:3}},b:"world"}, {a:1,b:"error 2"}, {a:1,b:"valid"}, {a:1,b:"error 3"}).a`, function() { roundtrip(this.test.title) });
   });
 
   describe('FilterFunctions', function() {
     it.skip(`Filter([1,2,3] As X, X.Value > 2)`, function() { roundtrip(this.test.title) });
     it(`Filter([1,2,3], Value >= 2)`, function() { roundtrip(this.test.title) });
-    it.skip(`Filter([1,2,3], ThisRecord.Value >= 2)`, function() { roundtrip(this.test.title) });
-    it.skip(`irst([1,4,2,7]).Value`, function() { roundtrip(this.test.title) });
+    it(`Filter([1,2,3], ThisRecord.Value >= 2)`, function() { roundtrip(this.test.title) });
+    it(`irst([1,4,2,7]).Value`, function() { roundtrip(this.test.title) });
     it(`First([30,20,10,40])`, function() { roundtrip(this.test.title) });
     it(`Last([30,20,10,40])`, function() { roundtrip(this.test.title) });
     it(`FirstN([30,20,10,40],2)`, function() { roundtrip(this.test.title) });
     it(`LastN([30,20,10,40],3)`, function() { roundtrip(this.test.title) });
     it(`Filter([1,4,2,7], Value > 2)`, function() { roundtrip(this.test.title) });
-    it.skip(`First(Filter([1,4,2,7], Value > 2)).Value`, function() { roundtrip(this.test.title) });
-    it.skip(`Filter([1,2,0,3,4], 1/ThisRecord.Value >= 0)`, function() { roundtrip(this.test.title) });
+    it(`First(Filter([1,4,2,7], Value > 2)).Value`, function() { roundtrip(this.test.title) });
+    it(`Filter([1,2,0,3,4], 1/ThisRecord.Value >= 0)`, function() { roundtrip(this.test.title) });
     it(`Filter([1,2,0,3,4], Blank())`, function() { roundtrip(this.test.title) });
-    it.skip(`Filter(LastN([1,2,3,4], Blank()), 1/ThisRecord.Value >= 0)`, function() { roundtrip(this.test.title) });
+    it(`Filter(LastN([1,2,3,4], Blank()), 1/ThisRecord.Value >= 0)`, function() { roundtrip(this.test.title) });
     it(`Filter(Blank(), Blank())`, function() { roundtrip(this.test.title) });
-    it.skip(`Filter(Sort([-2, -1, 0, 1, 2], 1 / Value), 1/ThisRecord.Value >= 0)`, function() { roundtrip(this.test.title) });
+    it(`Filter(Sort([-2, -1, 0, 1, 2], 1 / Value), 1/ThisRecord.Value >= 0)`, function() { roundtrip(this.test.title) });
   });
 
   describe('Find', function() {
@@ -525,10 +525,10 @@ describe('examples', function() {
     it(`Find(",", Filter(["empty table"], Value <> Value), [1, 1])`, function() { roundtrip(this.test.title) });
     it(`Find([Blank(), ",", "", "findMe"], [Blank(), "lastName,firstName", "lastName,firstName"], Filter(["empty table"], Value <> Value))`, function() { roundtrip(this.test.title) });
     it(`Find(",", [Blank(), "lastName,firstName"], Filter(["empty table"], Value <> Value))`, function() { roundtrip(this.test.title) });
-    it.skip(`Find("c", Table({ within: "abc" }, { within: Error({Kind: ErrorKind.Validation}) }, { within: "cde" }))`, function() { roundtrip(this.test.title) });
-    it.skip(`Find("c", ["abc", Error({Kind: ErrorKind.Validation}), "cde"])`, function() { roundtrip(this.test.title) });
-    it.skip(`Find(Table({ find: "a" }, { find: Error({Kind: ErrorKind.Validation}) }, { find: "b" }), "abc")`, function() { roundtrip(this.test.title) });
-    it.skip(`Find(["a", Error({Kind: ErrorKind.Validation}), "b"], "abc")`, function() { roundtrip(this.test.title) });
+    it(`Find("c", Table({ within: "abc" }, { within: Error({Kind: ErrorKind.Validation}) }, { within: "cde" }))`, function() { roundtrip(this.test.title) });
+    it(`Find("c", ["abc", Error({Kind: ErrorKind.Validation}), "cde"])`, function() { roundtrip(this.test.title) });
+    it(`Find(Table({ find: "a" }, { find: Error({Kind: ErrorKind.Validation}) }, { find: "b" }), "abc")`, function() { roundtrip(this.test.title) });
+    it(`Find(["a", Error({Kind: ErrorKind.Validation}), "b"], "abc")`, function() { roundtrip(this.test.title) });
     it(`Find(Table({ find: "a" }, { find: Mid("Hello", -1) }, { find: "b" }, If(1/0>2, { find: "e" }), { find: "c" }), Table({ within: "abc" }, If(Sqrt(-1)<0, { within: "err" }), { within: Left("err", -1) }, If(Right("err", -3) = "err", { within: "err" }), { within: "abc" }))`, function() { roundtrip(this.test.title) });
     it(`Find(Table({ find: "a" }, { find: "b" }, { find: "c" }), If(1/0>2,"abcdef"))`, function() { roundtrip(this.test.title) });
     it(`Find(If(Sqrt(-1)<0,"First second third"), Table({ within: "First" }, { within: "Second" }))`, function() { roundtrip(this.test.title) });
@@ -538,7 +538,7 @@ describe('examples', function() {
     it(`First([1, 2, 3, 4, 5])`, function() { roundtrip(this.test.title) });
     it(`First(Blank())`, function() { roundtrip(this.test.title) });
     it(`First([1, 1/0, 3])`, function() { roundtrip(this.test.title) });
-    it.skip(`First([1/0, 2, 3]).Value`, function() { roundtrip(this.test.title) });
+    it(`First([1/0, 2, 3]).Value`, function() { roundtrip(this.test.title) });
     it(`First(Sort([-2, -1, 0, 1, 2], 1 / Value))`, function() { roundtrip(this.test.title) });
     it(`FirstN([1, 2, 3, 4, 5], 2)`, function() { roundtrip(this.test.title) });
     it(`FirstN([1, 2, 3, 4, 5], 1)`, function() { roundtrip(this.test.title) });
@@ -550,20 +550,20 @@ describe('examples', function() {
     it(`FirstN(Blank())`, function() { roundtrip(this.test.title) });
     it(`FirstN(Sort([-2, -1, 0, 1, 2], 1 / Value), 2)`, function() { roundtrip(this.test.title) });
     it(`FirstN([1, 2, 3, 4, 5], 1/0)`, function() { roundtrip(this.test.title) });
-    it.skip(`First(Table({a:1,b:2},{c:3})).c`, function() { roundtrip(this.test.title) });
-    it.skip(`First(LastN(Table({a:"1", b:"101"}, {a:"2"}, {a:"3"}), 1)).b`, function() { roundtrip(this.test.title) });
-    it.skip(`First(Table({a:{aa:11,ab:12},b:1},{a:{ac:23},b:2})).a.ac`, function() { roundtrip(this.test.title) });
-    it.skip(`First(Table({a:{aa:11,ab:12},b:1},{a:{ac:23},b:2})).a.aa`, function() { roundtrip(this.test.title) });
-    it.skip(`First(Table({a:{Value:2},b:1},{a:{Value:1},b:2})).a`, function() { roundtrip(this.test.title) });
-    it.skip(`First(First(Table({a:{aa:11,ab:12,ad:Table({aaa:1},{aaa:2})},b:1},{a:{ac:23,ad:Table({bbb:1},{bbb:2})},b:2})).a.ad).bbb`, function() { roundtrip(this.test.title) });
-    it.skip(`First(First(Table({a:{aa:11,ab:12,ad:Table({aaa:1},{aaa:2})},b:1},{a:{ac:23,ad:Table({bbb:1},{bbb:2})},b:2})).a.ad).aaa`, function() { roundtrip(this.test.title) });
-    it.skip(`First(Filter([1,2,3],Value=4)).Value`, function() { roundtrip(this.test.title) });
+    it(`First(Table({a:1,b:2},{c:3})).c`, function() { roundtrip(this.test.title) });
+    it(`First(LastN(Table({a:"1", b:"101"}, {a:"2"}, {a:"3"}), 1)).b`, function() { roundtrip(this.test.title) });
+    it(`First(Table({a:{aa:11,ab:12},b:1},{a:{ac:23},b:2})).a.ac`, function() { roundtrip(this.test.title) });
+    it(`First(Table({a:{aa:11,ab:12},b:1},{a:{ac:23},b:2})).a.aa`, function() { roundtrip(this.test.title) });
+    it(`First(Table({a:{Value:2},b:1},{a:{Value:1},b:2})).a`, function() { roundtrip(this.test.title) });
+    it(`First(First(Table({a:{aa:11,ab:12,ad:Table({aaa:1},{aaa:2})},b:1},{a:{ac:23,ad:Table({bbb:1},{bbb:2})},b:2})).a.ad).bbb`, function() { roundtrip(this.test.title) });
+    it(`First(First(Table({a:{aa:11,ab:12,ad:Table({aaa:1},{aaa:2})},b:1},{a:{ac:23,ad:Table({bbb:1},{bbb:2})},b:2})).a.ad).aaa`, function() { roundtrip(this.test.title) });
+    it(`First(Filter([1,2,3],Value=4)).Value`, function() { roundtrip(this.test.title) });
     it(`FirstN(Filter([1,2,3],Value=4),2)`, function() { roundtrip(this.test.title) });
   });
 
   describe('ForAll', function() {
     it(`ForAll([1,2,3], ThisRecord)`, function() { roundtrip(this.test.title) });
-    it.skip(`ForAll([1,2,3], ThisRecord.Value)`, function() { roundtrip(this.test.title) });
+    it(`ForAll([1,2,3], ThisRecord.Value)`, function() { roundtrip(this.test.title) });
     it.skip(`ForAll([1,2,3] As X, X)`, function() { roundtrip(this.test.title) });
     it.skip(`ForAll([1,2,3] As X, X.Value)`, function() { roundtrip(this.test.title) });
     it(`ForAll([1,2,3],Value*Value)`, function() { roundtrip(this.test.title) });
@@ -572,10 +572,10 @@ describe('examples', function() {
     it(`ForAll(Sort([60, 61, 62, 63, 64], 1/Value), Char(Value))`, function() { roundtrip(this.test.title) });
     it(`ForAll(FirstN([60, 61, 62, 63, 64], Blank()), Char(Value))`, function() { roundtrip(this.test.title) });
     it(`ForAll(Sort([60, 61, 0, 63, 64], 1/Value), Char(Value))`, function() { roundtrip(this.test.title) });
-    it.skip(`ForAll(Table({Value:1,Zulu:1}, {Value:0,Zulu:0}, {Value:2,Zulu:2}), 1/ThisRecord.Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`First(LastN(ForAll(Table({Value:1,Zulu:1}, {Value:0,Zulu:0}, {Value:2,Zulu:2}), 1/ThisRecord.Value), 2)).Value`, function() { roundtrip(this.test.title) });
-    it.skip(`Table({Value:1},First(LastN(ForAll(Table({Value:1,Zulu:1}, {Value:0,Zulu:0}, {Value:2,Zulu:2}), 1/ThisRecord.Value), 2)),{Value:2})`, function() { roundtrip(this.test.title) });
-    it.skip(`First(First(LastN(ForAll(Table({Value:1}, {Value:0}, {Value:2}), Table({a: 1/ThisRecord.Value})), 2)).Value)`, function() { roundtrip(this.test.title) });
+    it(`ForAll(Table({Value:1,Zulu:1}, {Value:0,Zulu:0}, {Value:2,Zulu:2}), 1/ThisRecord.Value)`, function() { roundtrip(this.test.title) });
+    it(`First(LastN(ForAll(Table({Value:1,Zulu:1}, {Value:0,Zulu:0}, {Value:2,Zulu:2}), 1/ThisRecord.Value), 2)).Value`, function() { roundtrip(this.test.title) });
+    it(`Table({Value:1},First(LastN(ForAll(Table({Value:1,Zulu:1}, {Value:0,Zulu:0}, {Value:2,Zulu:2}), 1/ThisRecord.Value), 2)),{Value:2})`, function() { roundtrip(this.test.title) });
+    it(`First(First(LastN(ForAll(Table({Value:1}, {Value:0}, {Value:2}), Table({a: 1/ThisRecord.Value})), 2)).Value)`, function() { roundtrip(this.test.title) });
   });
 
   describe('If', function() {
@@ -670,7 +670,7 @@ describe('examples', function() {
     it(`IsToday(Date(Blank(), 2, 3))`, function() { roundtrip(this.test.title) });
     it(`IsToday(Date(2012,1,1))`, function() { roundtrip(this.test.title) });
     it(`IsToday(DateAdd(Today(),-1))`, function() { roundtrip(this.test.title) });
-    it.skip(`DateDiff(Now(), Today(), TimeUnit.Minutes) <> 0`, function() { roundtrip(this.test.title) });
+    it(`DateDiff(Now(), Today(), TimeUnit.Minutes) <> 0`, function() { roundtrip(this.test.title) });
     it(`Date(Year(Today()), Month(Today()), Day(Today())) = Today()`, function() { roundtrip(this.test.title) });
   });
 
@@ -678,7 +678,7 @@ describe('examples', function() {
     it(`Last([1, 2, 3, 4, 5])`, function() { roundtrip(this.test.title) });
     it(`Last(Blank())`, function() { roundtrip(this.test.title) });
     it(`Last([1, 1/0, 3])`, function() { roundtrip(this.test.title) });
-    it.skip(`Last([1, 2, 1/0]).Value`, function() { roundtrip(this.test.title) });
+    it(`Last([1, 2, 1/0]).Value`, function() { roundtrip(this.test.title) });
     it(`Last(Sort([-2, -1, 0, 1, 2], 1 / Value))`, function() { roundtrip(this.test.title) });
     it(`LastN([1, 2, 3, 4, 5], 2)`, function() { roundtrip(this.test.title) });
     it(`LastN([1, 2, 3, 4, 5])`, function() { roundtrip(this.test.title) });
@@ -692,7 +692,7 @@ describe('examples', function() {
     it(`LastN(Table({a:1, b:101}, {a:2}, {a:3}), 2)`, function() { roundtrip(this.test.title) });
     it(`LastN(Table({a:1}, {a:2}, {a:3}), 2)`, function() { roundtrip(this.test.title) });
     it(`LastN(Table({Value:1,Zulu:1}, {Value:2,Zulu:2}, {Value:3,Zulu:3}), 2)`, function() { roundtrip(this.test.title) });
-    it.skip(`Last(Filter([1,2,3],Value=4)).Value`, function() { roundtrip(this.test.title) });
+    it(`Last(Filter([1,2,3],Value=4)).Value`, function() { roundtrip(this.test.title) });
     it(`LastN(Filter([1,2,3],Value=4),2)`, function() { roundtrip(this.test.title) });
   });
 
@@ -794,7 +794,7 @@ describe('examples', function() {
     it(`Int(1/0)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('OptionSet', function() {
+  describe('OptionSet', function() {
     it(`OptionSet.Option1 <> OptionSet.Option2`, function() { roundtrip(this.test.title) });
     it(`OptionSet.Option2 = OptionSet.Option2`, function() { roundtrip(this.test.title) });
     it(`"Coerces to " & OptionSet.Option2`, function() { roundtrip(this.test.title) });
@@ -809,7 +809,7 @@ describe('examples', function() {
     it(`IsBlankOrError(If(1 / 0 < 2, TopOptionSetField))`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('ParseJson', function() {
+  describe('ParseJson', function() {
     it(`Value(Index(ParseJson("[5]"), 1))`, function() { roundtrip(this.test.title) });
     it(`Value(ParseJson("5"))`, function() { roundtrip(this.test.title) });
     it(`Value(ParseJson("true"))`, function() { roundtrip(this.test.title) });
@@ -862,7 +862,7 @@ describe('examples', function() {
     it(`Sum(Sequence(100), With({RandomNumber: Rand()}, If(RandomNumber > 0 && RandomNumber < 1.0, 1, 0)))`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Record', function() {
+  describe('Record', function() {
     it(`If(true, {x:2},Blank()).x`, function() { roundtrip(this.test.title) });
     it(`IsBlank(If(false, {x:2},Blank()).x)`, function() { roundtrip(this.test.title) });
     it(`With({x:Blank()}, x*x)`, function() { roundtrip(this.test.title) });
@@ -884,7 +884,7 @@ describe('examples', function() {
     it(`Sequence(4,4,1/0)`, function() { roundtrip(this.test.title) });
   });
 
-  describe.skip('Sort', function() {
+  describe('Sort', function() {
     it(`Sort([-2, -1, 5, 1, 2], Value)`, function() { roundtrip(this.test.title) });
     it(`Sort([-2, -1, 5, 1, 2], Value, SortOrder.Descending)`, function() { roundtrip(this.test.title) });
     it(`Sort([-2, Blank(), 5, 1, 2], Value)`, function() { roundtrip(this.test.title) });
@@ -1062,7 +1062,7 @@ describe('examples', function() {
     it(`Switch(99,1,"a", 2,"b", "default")`, function() { roundtrip(this.test.title) });
     it(`Switch(99,1,1/0,99,7)`, function() { roundtrip(this.test.title) });
     it(`Switch(99,1,8,99,7,1/0,9)`, function() { roundtrip(this.test.title) });
-    it.skip(`Switch(If(true,1,2),7-8,true && false, !false)`, function() { roundtrip(this.test.title) });
+    it(`Switch(If(true,1,2),7-8,true && false, !false)`, function() { roundtrip(this.test.title) });
     it(`Switch(1/0, 1, 8, 2, 9)`, function() { roundtrip(this.test.title) });
     it(`Switch(1, 1/0, 2, 1, 3)`, function() { roundtrip(this.test.title) });
   });
@@ -1233,7 +1233,7 @@ describe('examples', function() {
     it(`With(Blank(), Blank())`, function() { roundtrip(this.test.title) });
     it(`With( {y : 3} , y*y)`, function() { roundtrip(this.test.title) });
     it(`With({x : 5}, With({ x : x*2}, x))`, function() { roundtrip(this.test.title) });
-    it.skip(`With(First(First(LastN(ForAll(Table({Value:1}, {Value:0}, {Value:2}), Table({a: 1/ThisRecord.Value})), 2)).Value), a * a)`, function() { roundtrip(this.test.title) });
+    it(`With(First(First(LastN(ForAll(Table({Value:1}, {Value:0}, {Value:2}), Table({a: 1/ThisRecord.Value})), 2)).Value), a * a)`, function() { roundtrip(this.test.title) });
   });
 
 });

@@ -2,13 +2,11 @@ lexer and parser
 ----------------
 
 %
-inline record { }
-dot operator
 as
+comments
 allow trailing comma
 string interpolation
 localized decimal separator in numbers
-comments
 
 engineering
 -----------
