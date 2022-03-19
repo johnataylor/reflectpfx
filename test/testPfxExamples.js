@@ -195,12 +195,12 @@ describe('examples', function() {
 
   describe('Concat', function() {
     it(`Concat(ForAll(["a","b","c"], With({x:Value}, x)), Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`Concat(ForAll(["a","b","c"] As x, With({x:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`Concat(ForAll(["a","b","c"] As x, With({y:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
+    it(`Concat(ForAll(["a","b","c"] As x, With({x:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
+    it(`Concat(ForAll(["a","b","c"] As x, With({y:"hide"}, x)), Value)`, function() { roundtrip(this.test.title) });
     it(`Concat(["A", "B", "C"], ThisRecord.Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`Concat(["A", "B", "C"] As X, X.Value)`, function() { roundtrip(this.test.title) });
+    it(`Concat(["A", "B", "C"] As X, X.Value)`, function() { roundtrip(this.test.title) });
     it(`Concat(["A", "B", "C"], Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`Concat(ForAll(["A","B"] As X,Concat(ForAll(["C","D"] As Y,X.Value&Y.Value),Value)),Value)`, function() { roundtrip(this.test.title) });
+    it(`Concat(ForAll(["A","B"] As X,Concat(ForAll(["C","D"] As Y,X.Value&Y.Value),Value)),Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(`, function() { roundtrip(this.test.title) });
     it(`Concat(ForAll(["A", "B"], ThisRecord), Value)`, function() { roundtrip(this.test.title) });
     it.skip(`Concat(`, function() { roundtrip(this.test.title) });
@@ -400,12 +400,12 @@ describe('examples', function() {
     it(`IfError(1/0, FirstError.Kind)`, function() { roundtrip(this.test.title) });
     it(`IfError(Error({Kind:12}), FirstError.Kind)`, function() { roundtrip(this.test.title) });
     it(`IfError(0, 1, Sqrt(-2), 2)`, function() { roundtrip(this.test.title) });
-    it.skip(`IfError(0, 1, Error({Kind: ErrorKind.Unknown}), 2)`, function() { roundtrip(this.test.title) });
+    it(`IfError(0, 1, Error({Kind: ErrorKind.Unknown}), 2)`, function() { roundtrip(this.test.title) });
     it(`IfError(1, 2)`, function() { roundtrip(this.test.title) });
     it(`IfError(1, 2, 3)`, function() { roundtrip(this.test.title) });
     it(`IfError(1, 2, 3, 4)`, function() { roundtrip(this.test.title) });
     it(`IsBlank(1/0)`, function() { roundtrip(this.test.title) });
-    it.skip(`Not(IsBlank(1/0))`, function() { roundtrip(this.test.title) });
+    it(`Not(IsBlank(1/0))`, function() { roundtrip(this.test.title) });
     it(`"Result: " & IfError(1/0, -1)`, function() { roundtrip(this.test.title) });
     it(`"Result: " & IfError(1, "error 1", 2, "error 2", "no error")`, function() { roundtrip(this.test.title) });
     it(`"Result: " & IfError({a:1, b:"hello"}, {a:2, b:"error"}).b`, function() { roundtrip(this.test.title) });
@@ -414,7 +414,7 @@ describe('examples', function() {
   });
 
   describe('FilterFunctions', function() {
-    it.skip(`Filter([1,2,3] As X, X.Value > 2)`, function() { roundtrip(this.test.title) });
+    it(`Filter([1,2,3] As X, X.Value > 2)`, function() { roundtrip(this.test.title) });
     it(`Filter([1,2,3], Value >= 2)`, function() { roundtrip(this.test.title) });
     it(`Filter([1,2,3], ThisRecord.Value >= 2)`, function() { roundtrip(this.test.title) });
     it(`irst([1,4,2,7]).Value`, function() { roundtrip(this.test.title) });
@@ -564,11 +564,11 @@ describe('examples', function() {
   describe('ForAll', function() {
     it(`ForAll([1,2,3], ThisRecord)`, function() { roundtrip(this.test.title) });
     it(`ForAll([1,2,3], ThisRecord.Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`ForAll([1,2,3] As X, X)`, function() { roundtrip(this.test.title) });
-    it.skip(`ForAll([1,2,3] As X, X.Value)`, function() { roundtrip(this.test.title) });
+    it(`ForAll([1,2,3] As X, X)`, function() { roundtrip(this.test.title) });
+    it(`ForAll([1,2,3] As X, X.Value)`, function() { roundtrip(this.test.title) });
     it(`ForAll([1,2,3],Value*Value)`, function() { roundtrip(this.test.title) });
-    it.skip(`First(ForAll([1,2,3] As X, X)).Value`, function() { roundtrip(this.test.title) });
-    it.skip(`First(ForAll([1,2,3] As X, X.Value)).Value`, function() { roundtrip(this.test.title) });
+    it(`First(ForAll([1,2,3] As X, X)).Value`, function() { roundtrip(this.test.title) });
+    it(`First(ForAll([1,2,3] As X, X.Value)).Value`, function() { roundtrip(this.test.title) });
     it(`ForAll(Sort([60, 61, 62, 63, 64], 1/Value), Char(Value))`, function() { roundtrip(this.test.title) });
     it(`ForAll(FirstN([60, 61, 62, 63, 64], Blank()), Char(Value))`, function() { roundtrip(this.test.title) });
     it(`ForAll(Sort([60, 61, 0, 63, 64], 1/Value), Char(Value))`, function() { roundtrip(this.test.title) });
