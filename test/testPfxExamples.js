@@ -90,10 +90,10 @@ describe('examples', function() {
     it(`2*3`, function() { roundtrip(this.test.title) });
     it(`15/3`, function() { roundtrip(this.test.title) });
     it(`1/2`, function() { roundtrip(this.test.title) });
-    it.skip(`20%`, function() { roundtrip(this.test.title) });
-    it.skip(`200%`, function() { roundtrip(this.test.title) });
-    it.skip(`(1/0)%`, function() { roundtrip(this.test.title) });
-    it.skip(`1 * 50%`, function() { roundtrip(this.test.title) });
+    it(`20%`, function() { roundtrip(this.test.title) });
+    it(`200%`, function() { roundtrip(this.test.title) });
+    it(`(1/0)%`, function() { roundtrip(this.test.title) });
+    it(`1 * 50%`, function() { roundtrip(this.test.title) });
     it(`1+2*3`, function() { roundtrip(this.test.title) });
     it(`1=1`, function() { roundtrip(this.test.title) });
     it(`1<>1`, function() { roundtrip(this.test.title) });
@@ -140,7 +140,7 @@ describe('examples', function() {
     it(`Blank() + Blank()`, function() { roundtrip(this.test.title) });
     it(`-5 < Blank()`, function() { roundtrip(this.test.title) });
     it(`5 < Blank()`, function() { roundtrip(this.test.title) });
-    it.skip(`Blank()%`, function() { roundtrip(this.test.title) });
+    it(`Blank()%`, function() { roundtrip(this.test.title) });
     it(`Blank() =0 `, function() { roundtrip(this.test.title) });
     it(`Blank() <> 0`, function() { roundtrip(this.test.title) });
     it(`0 = Blank()`, function() { roundtrip(this.test.title) });
@@ -374,10 +374,10 @@ describe('examples', function() {
     it(`Date(2022,2,17) <> Date(2022,2,17)`, function() { roundtrip(this.test.title) });
     it(`Date(2022,2,17) = Date(2017,4,27)`, function() { roundtrip(this.test.title) });
     it(`Date(2022,2,17) <> Date(2017,4,27)`, function() { roundtrip(this.test.title) });
-    it.skip(`10% = 10%`, function() { roundtrip(this.test.title) });
-    it.skip(`10% = 0.1`, function() { roundtrip(this.test.title) });
-    it.skip(`10% <> 12%`, function() { roundtrip(this.test.title) });
-    it.skip(`10% = 0.12`, function() { roundtrip(this.test.title) });
+    it(`10% = 10%`, function() { roundtrip(this.test.title) });
+    it(`10% = 0.1`, function() { roundtrip(this.test.title) });
+    it(`10% <> 12%`, function() { roundtrip(this.test.title) });
+    it(`10% = 0.12`, function() { roundtrip(this.test.title) });
     it(`Time(10,30,00) = Time(10,30,00)`, function() { roundtrip(this.test.title) });
     it(`Time(14,20,30) = Time(2,30,30)`, function() { roundtrip(this.test.title) });
     it(`Time(10,30,00) <> Time(10,30,00)`, function() { roundtrip(this.test.title) });
