@@ -1,5 +1,6 @@
 lexer and parser
 ----------------
+power
 comments
 allow trailing comma
 string interpolation
