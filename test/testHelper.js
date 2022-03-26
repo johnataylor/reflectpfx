@@ -10,6 +10,14 @@ function roundtrip(original) {
     var t1 = lexer.tokenize(original);
     var c1 = t1.filter(token => token.type !== 'WS').length;
     var v1 = parser.eval(t1);
+
+    // eval should return undefined for single END token
+    if (v1 === undefined) {
+        assert.equal(t1.length, 1);
+        assert.equal(t1[0].type, 'END');
+        return;
+    }
+
     var b1 = utils.print(v1);
 
     // second trip through lexer and parser and pretty print

@@ -1,5 +1,6 @@
 lexer and parser
 ----------------
+logical operator precedence in the parse tree
 power
 comments
 allow trailing comma
@@ -9,9 +10,9 @@ disambigation operator
 
 engineering
 -----------
+- pointer to parent in the parse tree
 - clean up prim
 - pointers to underlying tokens (and therefore index)
 - parse tree operator type (note hack of adding spaces on ' and ' and ' or ')
 - parse tree operator printing
 - partial expression resolution
-
