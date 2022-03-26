@@ -21,6 +21,42 @@ describe('whitespace', function() {
     });
 });
 
+describe('comments', function() {
+    it('regular C style comment', function(){
+        var tokens = lexer.tokenize('hello /* this is a comment */ world');
+        assert.equal('COMMENT', tokens[2].type);
+        assert.equal('/* this is a comment */', tokens[2].value);
+    });
+    it('C++ style comments (reintroduced from BCPL)', function(){
+        var tokens = lexer.tokenize('hello // this is a comment\r\n world');
+        assert.equal('COMMENT', tokens[2].type);
+        assert.equal('// this is a comment', tokens[2].value);
+    });
+    it('multiple comments C style comments', function(){
+        var tokens = lexer.tokenize('no /* comment 1 */ direction /* comment 2 */ home');
+        assert.equal('COMMENT', tokens[2].type);
+        assert.equal('/* comment 1 */', tokens[2].value);
+        assert.equal('COMMENT', tokens[6].type);
+        assert.equal('/* comment 2 */', tokens[6].value);
+    });
+    it('combining comment styles', function(){
+        var tokens = lexer.tokenize('like /* comment 1 */ a // /* comment 2 */ rolling\r\nstone');
+        assert.equal('COMMENT', tokens[2].type);
+        assert.equal('/* comment 1 */', tokens[2].value);
+        assert.equal('COMMENT', tokens[6].type);
+        assert.equal('// /* comment 2 */ rolling', tokens[6].value);
+    });
+    it('comments in code', function(){
+        var tokens = lexer.tokenize('f(/* comment 1 */42, /* comment 2 */"hello world" /* comment 3 */, x + y)');
+        assert.equal('COMMENT', tokens[2].type);
+        assert.equal('/* comment 1 */', tokens[2].value);
+        assert.equal('COMMENT', tokens[6].type);
+        assert.equal('/* comment 2 */', tokens[6].value);
+        assert.equal('COMMENT', tokens[9].type);
+        assert.equal('/* comment 3 */', tokens[9].value);
+    });
+});
+
 describe('individual tokens', function() {
     describe('arithmetic operators', function() {
         it('+ should be tokenized', function(){

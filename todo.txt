@@ -1,8 +1,6 @@
 lexer and parser
 ----------------
-logical operator precedence in the parse tree
 power
-comments
 allow trailing comma
 string interpolation
 localized decimal separator in numbers

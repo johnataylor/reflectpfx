@@ -8,7 +8,7 @@ function roundtrip(original) {
 
     // first trip through lexer and parser and pretty print
     var t1 = lexer.tokenize(original);
-    var c1 = t1.filter(token => token.type !== 'WS').length;
+    var c1 = t1.filter(token => token.type !== 'WS' && token.type !== 'COMMENT').length;
     var v1 = parser.eval(t1);
 
     // eval should return undefined for single END token
@@ -22,7 +22,7 @@ function roundtrip(original) {
 
     // second trip through lexer and parser and pretty print
     var t2 = lexer.tokenize(b1);
-    var c2 = t2.filter(token => token.type !== 'WS').length;
+    var c2 = t2.filter(token => token.type !== 'WS' && token.type !== 'COMMENT').length;
     var v2 = parser.eval(t2);
     var b2 = utils.print(v2);
 

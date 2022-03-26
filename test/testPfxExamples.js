@@ -14,7 +14,7 @@ describe('examples', function() {
     it(`Coalesce("CurrentValue", "DefaultValue")`, function() { roundtrip(this.test.title) });
     it(`Coalesce("", "DefaultValue")`, function() { roundtrip(this.test.title) });
     it(`CountRows([10,30,20,40])`, function() { roundtrip(this.test.title) });
-    it.skip(`CountIf([10,50,20,30], Value >= 30 ) // TaxDetails is a child table`, function() { roundtrip(this.test.title) });
+    it(`CountIf([10,50,20,30], Value >= 30 ) // TaxDetails is a child table`, function() { roundtrip(this.test.title) });
     it(`Filter(Table({Name : "Alpha", Discount : 30 }, {Name:"Beta", Discount :45 }), Discount > 40)`, function() { roundtrip(this.test.title) });
   });
 
@@ -713,7 +713,7 @@ describe('examples', function() {
 
   describe('mathfuncs', function() {
     it(`Average(1,0,5)`, function() { roundtrip(this.test.title) });
-    it.skip(`Average("1",0,5) // coerce`, function() { roundtrip(this.test.title) });
+    it(`Average("1",0,5) // coerce`, function() { roundtrip(this.test.title) });
     it(`Average(Blank())`, function() { roundtrip(this.test.title) });
     it(`Average(1,Blank(),5)`, function() { roundtrip(this.test.title) });
     it(`Sum(1,2)`, function() { roundtrip(this.test.title) });
