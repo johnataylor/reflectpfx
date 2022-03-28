@@ -3,9 +3,10 @@ lexer and parser
 power
 allow trailing comma
 string interpolation
+semicolons multiple expressions
 localized decimal separator in numbers
 disambigation operator
-handling of invalid input
+handling of invalid input for example () followed by ()
 
 engineering
 -----------
