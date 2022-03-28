@@ -5,11 +5,12 @@ allow trailing comma
 string interpolation
 localized decimal separator in numbers
 disambigation operator
+handling of invalid input
 
 engineering
 -----------
 - pointer to parent in the parse tree
-- clean up prim
+- clean up prim - remove duplicate code
 - pointers to underlying tokens (and therefore index)
 - parse tree operator type (note hack of adding spaces on ' and ' and ' or ')
 - parse tree operator printing
