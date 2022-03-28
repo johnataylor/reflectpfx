@@ -16,3 +16,4 @@ engineering
 - parse tree operator type (note hack of adding spaces on ' and ' and ' or ')
 - parse tree operator printing
 - partial expression resolution
+- tests for unconsumed tokens scenarios
