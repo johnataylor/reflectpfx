@@ -18,13 +18,13 @@ function roundtrip(original) {
         return;
     }
 
-    var b1 = utils.print(v1);
+    var b1 = utils.toString(v1);
 
     // second trip through lexer and parser and pretty print
     var t2 = lexer.tokenize(b1);
     var c2 = t2.filter(token => token.type !== 'WS' && token.type !== 'COMMENT').length;
     var v2 = parser.eval(t2);
-    var b2 = utils.print(v2);
+    var b2 = utils.toString(v2);
 
     // compare the results
     assert.equal(c1, c2);
