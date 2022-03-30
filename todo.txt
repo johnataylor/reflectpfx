@@ -6,7 +6,6 @@ string interpolation
 semicolons multiple expressions
 localized decimal separator in numbers
 disambigation operator
-handling of invalid input for example () followed by ()
 single quotes to escape variable names
 
 engineering
