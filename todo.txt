@@ -2,18 +2,21 @@ lexer and parser
 ----------------
 power
 allow trailing comma
-string interpolation
 semicolons multiple expressions
 localized decimal separator in numbers
 disambigation operator
 single quotes to escape variable names
+full grammar for identifiers
 
 engineering
 -----------
+- use let and const
 - pointer to parent in the parse tree
-- clean up prim - remove duplicate code
+- clean up prim - remove duplicate code - be consistent with look ahead and helpers
 - pointers to underlying tokens (and therefore index)
 - parse tree operator type (note hack of adding spaces on ' and ' and ' or ')
 - parse tree operator printing
 - partial expression resolution
 - tests for unconsumed tokens scenarios
+- tests with chai
+
