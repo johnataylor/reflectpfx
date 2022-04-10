@@ -7,9 +7,9 @@ const utils = require('../lib/utils.js');
 function roundtrip(original) {
 
     // first trip through lexer and parser and pretty print
-    var t1 = lexer.tokenize(original);
-    var c1 = t1.filter(token => token.type !== 'WS' && token.type !== 'COMMENT').length;
-    var v1 = parser.eval(t1);
+    const t1 = lexer.tokenize(original);
+    const c1 = t1.filter(token => token.type !== 'WS' && token.type !== 'COMMENT').length;
+    const v1 = parser.eval(t1);
 
     // eval should return undefined for single END token
     if (v1 === undefined) {
@@ -18,13 +18,13 @@ function roundtrip(original) {
         return;
     }
 
-    var b1 = utils.toString(v1);
+    const b1 = utils.toString(v1);
 
     // second trip through lexer and parser and pretty print
-    var t2 = lexer.tokenize(b1);
-    var c2 = t2.filter(token => token.type !== 'WS' && token.type !== 'COMMENT').length;
-    var v2 = parser.eval(t2);
-    var b2 = utils.toString(v2);
+    const t2 = lexer.tokenize(b1);
+    const c2 = t2.filter(token => token.type !== 'WS' && token.type !== 'COMMENT').length;
+    const v2 = parser.eval(t2);
+    const b2 = utils.toString(v2);
 
     // compare the results
     assert.equal(c1, c2);
