@@ -6,7 +6,10 @@ semicolons multiple expressions
 localized decimal separator in numbers
 disambigation operator
 single quotes to escape variable names
-full grammar for identifiers
+full grammar for identifiers, from https://docs.microsoft.com/en-us/power-platform/power-fx/expression-grammar#IdentifierName
+probably something like:
+  var regex = /(_|\p{Lu}|\p{Ll}|\p{Lt}|\p{Lm}|\p{Lo}|\p{Nl})(_|\p{Lu}|\p{Ll}|\p{Lt}|\p{Lm}|\p{Lo}|\p{Nl}|\p{Nd}|\p{Pc}|\p{Mn}|\p{Cf})*/u;
+
 
 engineering
 -----------
