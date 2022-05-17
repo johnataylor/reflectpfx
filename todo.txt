@@ -10,6 +10,10 @@ full grammar for identifiers, from https://docs.microsoft.com/en-us/power-platfo
 probably something like:
   var regex = /(_|\p{Lu}|\p{Ll}|\p{Lt}|\p{Lm}|\p{Lo}|\p{Nl})(_|\p{Lu}|\p{Ll}|\p{Lt}|\p{Lm}|\p{Lo}|\p{Nl}|\p{Nd}|\p{Pc}|\p{Mn}|\p{Cf})*/u;
 
+...actually maybe is more correct because it handles ' ' and uses [ ] as it should
+
+const regex = /'[^']*'|[_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}][_\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}\p{Pc}\p{Mn}\p{Cf}]*/u;
+
 
 engineering
 -----------
